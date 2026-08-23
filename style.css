@@ -241,7 +241,7 @@ a{color:inherit;}
   transform:rotate(var(--tilt,-3deg));
   background:rgba(182,89,44,.03);
 }
-.stamp:nth-child(3n){--tilt:2.5deg; border-color:var(--teal); color:var(--teal); background:rgba(47,100,101,.04);}
+.stamp:nth-child(3n){--tilt:2.5deg; border-color:var(--ink); color:var(--ink); background:rgba(30,51,61,.04);}
 .stamp:nth-child(5n){--tilt:-1.5deg; border-color:var(--brass); color:var(--brass); background:rgba(169,130,47,.05);}
 .stamp .country{font-family:'Fraunces',serif; font-weight:700; font-size:1.1rem; line-height:1.15;}
 .stamp .date{font-family:'IBM Plex Mono',monospace; font-size:.68rem; margin-top:6px; letter-spacing:.05em;}
