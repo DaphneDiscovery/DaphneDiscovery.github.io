@@ -21,6 +21,10 @@
   .subsection{margin-bottom:56px;}
   .subsection h3{font-size:1.5rem; margin:0 0 4px;}
   .subsection .mono{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--rust);}
+  @media (max-width:640px){
+    .gallery{grid-template-columns:1fr;}
+    .country-hero{padding:56px 20px 40px;}
+  }
 </style>
 
 </head>
@@ -43,8 +47,8 @@
           <div>
             <div class="mm-panels">
       <div class="mm-panel" id="mm-Europa">
-        <span class="mm-chip mm-chip-visited">Albanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Allemagne<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/albanie.html">Albanie<span class="mm-go">→</span></a>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/allemagne.html">Allemagne<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/oostenrijk.html">Autriche<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Açores<span class="mm-check">✓</span></span>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/belgique.html">Belgique<span class="mm-go">→</span></a>
@@ -52,12 +56,12 @@
         <a class="mm-chip mm-chip-link" href="../bestemmingen/espagne.html">Espagne<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/france.html">France<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/georgie.html">Géorgie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Hongrie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/hongrie.html">Hongrie<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Irlande<span class="mm-check">✓</span></span>
         <a class="mm-chip mm-chip-link" href="../reizen/islande.html">Islande<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Italie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/italie.html">Italie<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Lettonie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Luxembourg<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/luxembourg.html">Luxembourg<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Monaco<span class="mm-check">✓</span></span>
         <span class="mm-chip mm-chip-visited">Norvège<span class="mm-check">✓</span></span>
         <span class="mm-chip mm-chip-visited">Pays-Bas<span class="mm-check">✓</span></span>
@@ -73,28 +77,13 @@
       </div>
       <div class="mm-panel mm-hidden" id="mm-Azië">
         <span class="mm-chip mm-chip-visited">Népal<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Sri Lanka<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/sri-lanka.html">Sri Lanka<span class="mm-go">→</span></a>
       </div>
       <div class="mm-panel mm-hidden" id="mm-Afrika">
-        <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/jordanie.html">Jordanie<span class="mm-go">→</span></a>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/maroc.html">Maroc<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
-      </div>
-      </div>
-      <div class="mm-panel hidden" id="mm-Amerika">
-        <a class="mm-chip mm-chip-link" href="../reizen/canada.html">Canada<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Équateur<span class="mm-check">✓</span></span>
-      </div>
-      <div class="mm-panel hidden" id="mm-Azië">
-        <span class="mm-chip mm-chip-visited">Népal<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Sri Lanka<span class="mm-check">✓</span></span>
-      </div>
-      <div class="mm-panel hidden" id="mm-Afrika">
-        <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
-        <a class="mm-chip mm-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/turquie.html">Turquie<span class="mm-go">→</span></a>
       </div>
             </div>
             <div class="mm-panels-footer">31 destinations visitées · <a href="../destinations.html">voir le mur des tampons</a></div>

@@ -5,22 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>France — Carnet de voyage</title>
 <link rel="stylesheet" href="../style.css">
-
 <style>
-  .country-hero{{
+  .country-hero{
     background: linear-gradient(135deg,#2c4b58,#1e333d);
     padding:80px 24px 56px; text-align:center; color:#fff;
-  }}
-  .country-hero .mono{{color:var(--brass); font-size:.75rem; letter-spacing:.25em; text-transform:uppercase;}}
-  .country-hero h1{{color:#fff; font-size:clamp(2.2rem,5vw,3.2rem); margin:12px 0 14px;}}
-  .country-hero p{{max-width:520px; margin:0 auto; color:#dbe6ea; line-height:1.6;}}
-  .gallery{{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; margin-top:8px;}}
-  .gal-card{{background:#fffdf6; border:1px solid var(--paper-line); border-radius:6px; overflow:hidden; display:flex; justify-content:center; padding:4px;}}
-  .subsection{{margin-bottom:56px;}}
-  .subsection h3{{font-size:1.5rem; margin:0 0 4px;}}
-  .subsection .mono{{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--rust);}}
+  }
+  .country-hero .mono{color:var(--brass); font-size:.75rem; letter-spacing:.25em; text-transform:uppercase;}
+  .country-hero h1{color:#fff; font-size:clamp(2.2rem,5vw,3.2rem); margin:12px 0 14px;}
+  .country-hero p{max-width:520px; margin:0 auto; color:#dbe6ea; line-height:1.6;}
+  .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; margin-top:8px;}
+  .gal-card{background:#fffdf6; border:1px solid var(--paper-line); border-radius:6px; overflow:hidden; display:flex; justify-content:center; padding:4px;}
+  .subsection{margin-bottom:56px;}
+  .subsection h3{font-size:1.5rem; margin:0 0 4px;}
+  .subsection .mono{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--rust);}
+  @media (max-width:640px){
+    .gallery{grid-template-columns:1fr;}
+    .country-hero{padding:56px 20px 40px;}
+  }
 </style>
-
 </head>
 <body>
 
@@ -41,8 +43,8 @@
           <div>
             <div class="mm-panels">
       <div class="mm-panel" id="mm-Europa">
-        <span class="mm-chip mm-chip-visited">Albanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Allemagne<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/albanie.html">Albanie<span class="mm-go">→</span></a>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/allemagne.html">Allemagne<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/oostenrijk.html">Autriche<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Açores<span class="mm-check">✓</span></span>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/belgique.html">Belgique<span class="mm-go">→</span></a>
@@ -50,12 +52,12 @@
         <a class="mm-chip mm-chip-link" href="../bestemmingen/espagne.html">Espagne<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/france.html">France<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/georgie.html">Géorgie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Hongrie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/hongrie.html">Hongrie<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Irlande<span class="mm-check">✓</span></span>
         <a class="mm-chip mm-chip-link" href="../reizen/islande.html">Islande<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Italie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/italie.html">Italie<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Lettonie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Luxembourg<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/luxembourg.html">Luxembourg<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Monaco<span class="mm-check">✓</span></span>
         <span class="mm-chip mm-chip-visited">Norvège<span class="mm-check">✓</span></span>
         <span class="mm-chip mm-chip-visited">Pays-Bas<span class="mm-check">✓</span></span>
@@ -71,28 +73,13 @@
       </div>
       <div class="mm-panel mm-hidden" id="mm-Azië">
         <span class="mm-chip mm-chip-visited">Népal<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Sri Lanka<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/sri-lanka.html">Sri Lanka<span class="mm-go">→</span></a>
       </div>
       <div class="mm-panel mm-hidden" id="mm-Afrika">
-        <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/jordanie.html">Jordanie<span class="mm-go">→</span></a>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/maroc.html">Maroc<span class="mm-go">→</span></a>
         <a class="mm-chip mm-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
-      </div>
-      </div>
-      <div class="mm-panel hidden" id="mm-Amerika">
-        <a class="mm-chip mm-chip-link" href="../reizen/canada.html">Canada<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Équateur<span class="mm-check">✓</span></span>
-      </div>
-      <div class="mm-panel hidden" id="mm-Azië">
-        <span class="mm-chip mm-chip-visited">Népal<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Sri Lanka<span class="mm-check">✓</span></span>
-      </div>
-      <div class="mm-panel hidden" id="mm-Afrika">
-        <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
-        <a class="mm-chip mm-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="mm-go">→</span></a>
-        <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="../bestemmingen/turquie.html">Turquie<span class="mm-go">→</span></a>
       </div>
             </div>
             <div class="mm-panels-footer">31 destinations visitées · <a href="../destinations.html">voir le mur des tampons</a></div>
@@ -110,7 +97,7 @@
 <header class="country-hero">
   <span class="mono">Europe · Bestemming</span>
   <h1>France</h1>
-  <p>De Marseille à Paris : Méditerranée et vie parisienne.</p>
+  <p>De Marseille à Paris, en passant par l'Alsace et la Normandie.</p>
 </header>
 
 <section class="section">
@@ -191,6 +178,88 @@
     </div>
   </div>
 
+  <div class="subsection">
+    <span class="mono">Section 3 · 6 publications</span>
+    <h3>Nancy & Guyonvelle</h3>
+    <div class="gallery">
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDIT4qUuhea/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDIX3AKOMgK/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDIY6SgOA6q/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDNihl2Ooh2/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDnVf6TurRZ/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDnW67wOwDv/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <span class="mono">Section 4 · 6 publications</span>
+    <h3>Côte d'Opale</h3>
+    <div class="gallery">
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cx5_DV4LBTf/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cx5x1lBqrmg/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cx5viR9qYAr/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cx5tVx3KTCH/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CyEiRtTrAxp/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CyEkONWLmIy/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <span class="mono">Section 5 · 2 publications</span>
+    <h3>Alsace</h3>
+    <div class="gallery">
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CZCGFf4KMvC/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CZB9R2Qq2Z-/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <span class="mono">Section 6 · 1 publications</span>
+    <h3>Rouen</h3>
+    <div class="gallery">
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CSbXIl2qXgr/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <span class="mono">Section 7 · 1 publications</span>
+    <h3>Étretat</h3>
+    <div class="gallery">
+      <div class="gal-card">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CST4NoAqGrT/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
