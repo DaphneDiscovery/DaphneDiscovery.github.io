@@ -1,0 +1,266 @@
+/* ===================================================================
+   Carnet de voyage — shared design system
+   Palette: deep navy ink, warm parchment, brass gold, brick rust, teal
+=================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:        #1e333d;
+  --ink-2:      #2c4b58;
+  --parchment:  #f4eede;
+  --parchment-2:#ece2c9;
+  --paper-line: #d8cca5;
+  --brass:      #a9822f;
+  --rust:       #b6592c;
+  --teal:       #2f6465;
+  --text-dark:  #221d16;
+  --text-light: #f4eede;
+  --text-muted: #6b6355;
+  --shadow:     0 12px 28px rgba(20,16,8,.18);
+  --radius:     2px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--parchment);
+  color:var(--text-dark);
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;}
+
+/* ---------- top nav (the "tabs") ---------- */
+.topbar{
+  background:var(--ink);
+  color:var(--text-light);
+  position:sticky; top:0; z-index:50;
+  border-bottom:3px solid var(--brass);
+}
+.topbar-inner{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px;
+  flex-wrap:wrap; gap:12px;
+}
+.brand{
+  font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem;
+  text-decoration:none; color:var(--text-light);
+  display:flex; align-items:baseline; gap:8px;
+}
+.brand .mono{font-size:.7rem; color:var(--brass); letter-spacing:.12em;}
+.tabs{display:flex; gap:4px; flex-wrap:wrap;}
+.tabs a{
+  text-decoration:none;
+  font-size:.82rem; letter-spacing:.05em; text-transform:uppercase;
+  color:#cfd7dd;
+  padding:8px 14px;
+  border-radius:999px;
+  transition:background .15s, color .15s;
+}
+.tabs a:hover{background:rgba(255,255,255,.08); color:#fff;}
+.tabs a.active{background:var(--brass); color:var(--ink); font-weight:600;}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(ellipse at 20% -10%, rgba(169,130,47,.25), transparent 55%),
+    linear-gradient(180deg, var(--ink), var(--ink-2));
+  color:var(--text-light);
+  padding:88px 24px 64px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(244,238,222,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,238,222,.05) 1px, transparent 1px);
+  background-size:38px 38px;
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.75rem; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--brass); margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.6rem);
+  margin:0 0 14px; color:#fff;
+}
+.hero p{
+  max-width:520px; margin:0 auto; color:#cfd7dd; font-size:1.05rem; line-height:1.6;
+}
+
+/* flight path divider */
+.flightpath{
+  max-width:640px; margin:36px auto 0; position:relative; height:24px;
+}
+.flightpath svg{width:100%; height:100%; display:block;}
+
+/* ---------- mega menu ---------- */
+.dropdown-wrap{position:relative;}
+.mm-trigger{
+  background:none; border:none; cursor:pointer;
+  font-family:inherit; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase;
+  color:#cfd7dd; padding:8px 14px; border-radius:999px;
+}
+.mm-trigger:hover, .mm-trigger.open{background:rgba(255,255,255,.08); color:#fff;}
+.megamenu{
+  display:none;
+  position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+  width:min(720px, 92vw);
+  background:#fffdf6;
+  color:var(--text-dark);
+  border:1px solid var(--paper-line);
+  border-radius:6px;
+  box-shadow:0 24px 48px rgba(10,8,4,.35);
+  overflow:hidden;
+}
+.megamenu.open{display:flex;}
+.mm-continents{
+  width:190px; flex-shrink:0;
+  background:var(--parchment-2);
+  padding:14px 10px;
+  display:flex; flex-direction:column; gap:2px;
+  border-right:1px solid var(--paper-line);
+}
+.mm-continent{
+  text-align:left; background:none; border:none; cursor:pointer;
+  font-family:'Fraunces',serif; font-size:.98rem; color:var(--text-dark);
+  padding:10px 12px; border-radius:4px;
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+}
+.mm-continent:hover{background:rgba(182,89,44,.08);}
+.mm-continent.active{background:var(--ink); color:#fff;}
+.mm-continent.active .mm-count{background:var(--brass); color:var(--ink);}
+.mm-count{
+  font-family:'IBM Plex Mono',monospace; font-size:.65rem;
+  background:var(--paper-line); color:var(--text-muted);
+  padding:2px 7px; border-radius:999px;
+}
+.mm-panels{flex:1; padding:18px 20px; max-height:360px; overflow-y:auto;}
+.mm-panel{display:flex; flex-wrap:wrap; gap:8px; align-content:flex-start;}
+.mm-panel.hidden{display:none;}
+.mm-chip{
+  font-family:'Inter',sans-serif; font-size:.82rem;
+  padding:7px 12px; border-radius:999px;
+  display:inline-flex; align-items:center; gap:6px;
+  text-decoration:none;
+}
+.mm-chip-visited{background:var(--parchment-2); color:var(--text-muted); cursor:default;}
+.mm-chip-visited .mm-check{color:var(--teal); font-size:.75rem;}
+.mm-chip-link{background:var(--rust); color:#fff; font-weight:600; box-shadow:0 4px 10px rgba(182,89,44,.35);}
+.mm-chip-link .mm-go{transition:transform .15s;}
+.mm-chip-link:hover .mm-go{transform:translateX(3px);}
+.mm-panels-footer{
+  padding:12px 20px; border-top:1px solid var(--paper-line);
+  background:var(--parchment); font-size:.78rem; color:var(--text-muted);
+}
+.mm-panels-footer a{color:var(--rust); font-weight:600; text-decoration:none;}
+@media (max-width:640px){
+  .megamenu{position:fixed; top:64px; left:4vw; width:92vw; flex-direction:column; max-height:80vh; overflow-y:auto;}
+  .mm-continents{width:100%; flex-direction:row; flex-wrap:wrap; border-right:none; border-bottom:1px solid var(--paper-line);}
+  .mm-panels{max-height:none;}
+}
+
+/* ---------- section wrapper ---------- */
+.section{max-width:1100px; margin:0 auto; padding:56px 24px;}
+.section-head{margin-bottom:32px;}
+.section-head .mono{
+  font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--rust);
+  display:block; margin-bottom:8px;
+}
+.section-head h2{font-size:2rem; margin:0;}
+
+/* ---------- boarding-pass trip cards ---------- */
+.card-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:28px;
+}
+.ticket{
+  display:flex;
+  background:#fffdf6;
+  border:1px solid var(--paper-line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  text-decoration:none;
+  color:var(--text-dark);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.ticket:hover{transform:translateY(-4px); box-shadow:0 18px 34px rgba(20,16,8,.24);}
+.ticket-main{flex:1; padding:22px 20px;}
+.ticket-main .mono{
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal);
+}
+.ticket-main h3{font-size:1.4rem; margin:8px 0 6px;}
+.ticket-main p{margin:0; color:var(--text-muted); font-size:.92rem; line-height:1.5;}
+.ticket-stub{
+  width:100px; flex-shrink:0;
+  background:var(--ink);
+  color:var(--text-light);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:6px; padding:12px 8px;
+  position:relative;
+  border-left:2px dashed var(--paper-line);
+}
+.ticket-stub::before, .ticket-stub::after{
+  content:""; position:absolute; left:-8px; width:16px; height:16px;
+  background:var(--parchment); border-radius:50%;
+}
+.ticket-stub::before{top:-8px;} .ticket-stub::after{bottom:-8px;}
+.ticket-stub .code{font-family:'Fraunces',serif; font-weight:700; font-size:1.3rem;}
+.ticket-stub .date{font-family:'IBM Plex Mono',monospace; font-size:.65rem; color:var(--brass); text-align:center;}
+.ticket-arrow{font-size:.78rem; color:var(--rust); margin-top:12px; display:inline-block; font-weight:600;}
+
+/* ---------- passport stamps (destinations) ---------- */
+.stamp-wall{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:36px 24px;
+  padding:8px 0;
+}
+.stamp{
+  aspect-ratio:1/1;
+  border:2px dashed var(--rust);
+  border-radius:8px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:14px;
+  color:var(--rust);
+  transform:rotate(var(--tilt,-3deg));
+  background:rgba(182,89,44,.03);
+}
+.stamp:nth-child(3n){--tilt:2.5deg; border-color:var(--ink); color:var(--ink); background:rgba(30,51,61,.04);}
+.stamp:nth-child(5n){--tilt:-1.5deg; border-color:var(--brass); color:var(--brass); background:rgba(169,130,47,.05);}
+.stamp .country{font-family:'Fraunces',serif; font-weight:700; font-size:1.1rem; line-height:1.15;}
+.stamp .date{font-family:'IBM Plex Mono',monospace; font-size:.68rem; margin-top:6px; letter-spacing:.05em;}
+.stamp .place{font-size:.72rem; margin-top:4px; opacity:.85;}
+.stamp.placeholder{border-style:dotted; opacity:.55;}
+
+/* ---------- footer ---------- */
+footer{
+  text-align:center; padding:40px 24px 56px;
+  color:var(--text-muted); font-size:.82rem;
+}
+footer .mono{color:var(--brass);}
+
+@media (max-width:640px){
+  .topbar-inner{padding:12px 16px;}
+  .tabs{gap:2px;}
+  .tabs a, .mm-trigger{padding:6px 9px; font-size:.72rem;}
+  .ticket{flex-direction:column;}
+  .ticket-stub{width:100%; flex-direction:row; border-left:none; border-top:2px dashed var(--paper-line);}
+  .ticket-stub::before,.ticket-stub::after{left:50%; top:-8px; transform:translateX(-50%);}
+  .ticket-stub::after{bottom:-8px; top:auto;}
+}
