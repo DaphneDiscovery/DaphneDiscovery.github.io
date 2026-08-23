@@ -36,7 +36,18 @@
     color:inherit; text-decoration:none;
   }
   .insta-link svg{width:15px; height:15px; flex-shrink:0;}
-  .strip-wrap{position:relative; max-width:1100px; margin:0 auto;}
+  .strip-wrap{position:relative; max-width:1600px; margin:0 auto; padding:0 24px;}
+  .brandmark{margin-bottom:30px;}
+  .brandmark .name{font-family:'Fraunces',serif; font-weight:700; font-size:1.9rem; color:#fff;}
+  .brandmark .tag{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.3em; color:var(--brass); margin-top:6px;}
+  .slogan{font-size:clamp(1.9rem,4.2vw,3rem); margin:0 0 16px; color:#fff; line-height:1.2; font-family:'Fraunces',serif; font-weight:600;}
+  .insta-cta{
+    display:inline-flex; align-items:center; gap:10px; margin-top:8px;
+    background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+    color:#fff; text-decoration:none; font-weight:600; font-size:.9rem;
+    padding:12px 22px; border-radius:999px; box-shadow:0 10px 24px rgba(221,42,123,.35);
+  }
+  .insta-cta svg{width:17px; height:17px; flex-shrink:0;}
   .strip-wrap::before, .strip-wrap::after{
     content:""; position:absolute; top:0; bottom:20px; width:60px; z-index:2; pointer-events:none;
   }
@@ -50,7 +61,7 @@
     color:var(--ink); font-size:1rem;
   }
   .strip-nav:hover{background:var(--ink); color:#fff;}
-  .strip-nav.prev{left:6px;} .strip-nav.next{right:6px;}
+  .strip-nav.prev{left:28px;} .strip-nav.next{right:28px;}
   @media (max-width:640px){.strip-nav{display:none;}}
 </style>
 </head>
@@ -108,7 +119,7 @@
       <div class="mm-panel hidden" id="mm-Afrika">
         <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
         <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
-        <span class="mm-chip mm-chip-visited">Namibie<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="bestemmingen/namibie.html">Namibie<span class="mm-go">→</span></a>
         <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
       </div>
             </div>
@@ -126,8 +137,11 @@
 
 
 <header class="hero photo-hero">
-  <div class="hero-eyebrow">Journal de bord &mdash; en cours d'écriture</div>
-  <h1>Un carnet, une carte,<br>et beaucoup trop de bagages.</h1>
+  <div class="brandmark">
+    <div class="name">Daphné Discovery</div>
+    <div class="tag">ADVENTURE &amp; NATURE</div>
+  </div>
+  <h1 class="slogan">A life of memories,<br>not just dreams.</h1>
   <p>Chaque voyage a son propre programme interactif : itinéraires jour par jour, cartes, photos et notes de terrain. Cette page rassemble tout, classé par continent.</p>
   <div class="flightpath">
     <svg viewBox="0 0 640 24" preserveAspectRatio="none">
@@ -136,6 +150,10 @@
       <path d="M622 6 L636 12 L622 18 Z" fill="#a9822f"/>
     </svg>
   </div>
+  <a class="insta-cta" href="https://www.instagram.com/daphne_discovery" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+    Suis mes aventures @daphne_discovery
+  </a>
   <div class="hero-photo-credit">Lac de Bovilla, Albanie</div>
 </header>
 
@@ -184,6 +202,8 @@
 <div class="strip-wrap">
   <button class="strip-nav prev" id="stripPrev" aria-label="Précédent">‹</button>
   <div class="strip" id="photoStrip">
+    <div class="strip-item"><img src="assets/photos/albanie-meer.jpg" alt="Lac de Bovilla, Albanie"><div class="strip-cap">ALBANIE · LAC DE BOVILLA</div></div>
+    <div class="strip-item"><img src="assets/photos/namibie-woestijn.jpg" alt="Désert de Namibie"><div class="strip-cap">NAMIBIE · DÉSERT</div></div>
     <div class="strip-item"><img src="assets/photos/srilanka-worldsend.jpg" alt="World's End, Sri Lanka"><div class="strip-cap">SRI LANKA · WORLD'S END</div></div>
     <div class="strip-item"><img src="assets/photos/jordanie-petra.jpg" alt="Petra, Jordanie"><div class="strip-cap">JORDANIE · PETRA</div></div>
     <div class="strip-item"><img src="assets/photos/ecuador-quilotoa.jpg" alt="Lagune du Quilotoa, Équateur"><div class="strip-cap">ÉQUATEUR · QUILOTOA</div></div>
