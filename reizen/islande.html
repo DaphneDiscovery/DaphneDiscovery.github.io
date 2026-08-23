@@ -22,7 +22,7 @@
   header p{margin:6px 0 0; font-size:.9rem; opacity:.9; font-family:Arial, sans-serif;}
   .layout{display:flex; max-width:1500px; margin:0 auto; gap:0;}
   nav{
-    width:min(190px,42vw); flex-shrink:0; padding:20px 10px; border-right:1px solid var(--border);
+    width:min(150px,34vw); flex-shrink:0; padding:20px 10px; border-right:1px solid var(--border);
   }
   nav button{
     display:block; width:100%; text-align:left; padding:10px 12px; margin-bottom:4px;
@@ -145,6 +145,11 @@
     .layout{flex-direction:column;}
     nav{width:100%; display:flex; flex-wrap:wrap; border-right:none; border-bottom:1px solid var(--border);}
     nav button{width:100%; flex:1 1 100%;}
+  }
+  @media (max-width:480px){
+    main{padding:14px;}
+    .day-card{padding:14px;}
+    nav .group-label{font-size:.65rem;}
   }
 </style>
 </head>
