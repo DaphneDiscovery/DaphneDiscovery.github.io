@@ -16,30 +16,17 @@
   .country-hero h1{color:#fff; font-size:clamp(2.2rem,5vw,3.2rem); margin:12px 0 14px;}
   .country-hero p{max-width:520px; margin:0 auto; color:#dbe6ea; line-height:1.6;}
   .gallery{
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:22px; margin-top:8px;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:24px; margin-top:8px;
   }
   .gal-card{
-    background:#fffdf6; border:1px dashed var(--paper-line); border-radius:6px;
-    overflow:hidden; display:flex; flex-direction:column;
+    background:#fffdf6; border:1px solid var(--paper-line); border-radius:6px;
+    overflow:hidden; display:flex; justify-content:center; padding:4px;
   }
-  .gal-placeholder{
-    aspect-ratio:4/5; background:var(--parchment-2);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:8px; color:var(--text-muted);
+  .loading-note{
+    text-align:center; color:var(--text-muted); font-size:.85rem; padding:40px 20px;
+    font-family:'IBM Plex Mono',monospace;
   }
-  .gal-num{font-family:'Fraunces',serif; font-weight:700; font-size:1.6rem; color:var(--brass);}
-  .gal-hint{font-family:'IBM Plex Mono',monospace; font-size:.68rem; text-align:center; letter-spacing:.03em; line-height:1.5;}
-  .gal-link{
-    display:block; text-align:center; padding:10px; font-size:.8rem;
-    color:var(--rust); font-weight:600; text-decoration:none; border-top:1px solid var(--paper-line);
-  }
-  .gal-link:hover{background:var(--parchment-2);}
-  .howto{
-    background:#fff3d6; border:1px dashed var(--brass); border-radius:6px;
-    padding:16px 20px; margin-bottom:32px; font-size:.86rem; color:#5b4a20; line-height:1.6;
-  }
-  .howto code{background:rgba(0,0,0,.06); padding:1px 6px; border-radius:3px;}
 </style>
 </head>
 <body>
@@ -115,17 +102,10 @@
 <header class="country-hero">
   <span class="mono">Afrique · Bestemming</span>
   <h1>Namibie</h1>
-  <p>Le désert du Namib, ses dunes rouges et cet horizon qui n'en finit pas. Seize souvenirs de ce voyage, à venir.</p>
+  <p>Le désert du Namib, ses dunes rouges et cet horizon qui n'en finit pas. Seize souvenirs de ce voyage.</p>
 </header>
 
 <section class="section">
-  <div class="howto">
-    <strong>Voor Daphné:</strong> vervang elk vak hieronder door de bijhorende foto. Open dit bestand (<code>bestemmingen/namibie.html</code>),
-    zoek <code>gal-placeholder</code> nummer <code>01</code> t.e.m. <code>16</code>, en vervang de inhoud door
-    <code>&lt;img src="../assets/photos/namibie-XX.jpg"&gt;</code> — of stuur me gewoon de 16 foto's in volgorde en ik verwerk ze meteen.
-    De volgorde hieronder volgt exact de volgorde van je Instagram-links.
-  </div>
-
   <div class="section-head">
     <span class="mono">16 publications</span>
     <h2>Le mur de Namibie</h2>
@@ -133,116 +113,52 @@
 
   <div class="gallery">
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">01</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 1</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/reel/DRaUdXmDcmT/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRaUdXmDcmT/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">02</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 2</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQPeT-fjU8r/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQPeT-fjU8r/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">03</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 3</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQmQnNmDTHt/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQmQnNmDTHt/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">04</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 4</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQmWt3_Ddrg/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQmWt3_Ddrg/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">05</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 5</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQPfqGCjXwd/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQPfqGCjXwd/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">06</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 6</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQSXQgtjd-J/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQSXQgtjd-J/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">07</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 7</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQSYTvvjW0x/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQSYTvvjW0x/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">08</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 8</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQXiussDVAC/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQXiussDVAC/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">09</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 9</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQe8QoDDaAA/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQe8QoDDaAA/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">10</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 10</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQfjGMtjLDu/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQfjGMtjLDu/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">11</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 11</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQgs-vqjRrd/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQgs-vqjRrd/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">12</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 12</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQhZUCQjdei/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQhZUCQjdei/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">13</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 13</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQh5QoWjTlp/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQh5QoWjTlp/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">14</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 14</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQjmbu8DXnr/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQjmbu8DXnr/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">15</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 15</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQkSiKUjavl/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQkSiKUjavl/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
       <div class="gal-card">
-        <div class="gal-placeholder">
-          <span class="gal-num">16</span>
-          <span class="gal-hint">sleep hier de<br>foto van post 16</span>
-        </div>
-        <a class="gal-link" href="https://www.instagram.com/p/DQlz9LQjS_e/" target="_blank" rel="noopener">Voir la publication →</a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQlz9LQjS_e/" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>
       </div>
   </div>
 </section>
@@ -252,5 +168,6 @@
 </footer>
 
 <script src="../assets/nav.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
