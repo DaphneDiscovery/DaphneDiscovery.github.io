@@ -36,6 +36,22 @@
     color:inherit; text-decoration:none;
   }
   .insta-link svg{width:15px; height:15px; flex-shrink:0;}
+  .strip-wrap{position:relative; max-width:1100px; margin:0 auto;}
+  .strip-wrap::before, .strip-wrap::after{
+    content:""; position:absolute; top:0; bottom:20px; width:60px; z-index:2; pointer-events:none;
+  }
+  .strip-wrap::before{left:0; background:linear-gradient(90deg, var(--parchment), transparent);}
+  .strip-wrap::after{right:0; background:linear-gradient(270deg, var(--parchment), transparent);}
+  .strip-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:38px; height:38px; border-radius:50%; z-index:3;
+    background:#fffdf6; border:1px solid var(--paper-line); box-shadow:var(--shadow);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    color:var(--ink); font-size:1rem;
+  }
+  .strip-nav:hover{background:var(--ink); color:#fff;}
+  .strip-nav.prev{left:6px;} .strip-nav.next{right:6px;}
+  @media (max-width:640px){.strip-nav{display:none;}}
 </style>
 </head>
 <body>
@@ -165,14 +181,18 @@
     <h2>Dernières aventures</h2>
   </div>
 </section>
-<div class="strip">
-  <div class="strip-item"><img src="assets/photos/srilanka-worldsend.jpg" alt="World's End, Sri Lanka"><div class="strip-cap">SRI LANKA · WORLD'S END</div></div>
-  <div class="strip-item"><img src="assets/photos/jordanie-petra.jpg" alt="Petra, Jordanie"><div class="strip-cap">JORDANIE · PETRA</div></div>
-  <div class="strip-item"><img src="assets/photos/ecuador-quilotoa.jpg" alt="Lagune du Quilotoa, Équateur"><div class="strip-cap">ÉQUATEUR · QUILOTOA</div></div>
-  <div class="strip-item"><img src="assets/photos/srilanka-sigiriya.jpg" alt="Sigiriya au coucher du soleil, Sri Lanka"><div class="strip-cap">SRI LANKA · SIGIRIYA</div></div>
-  <div class="strip-item"><img src="assets/photos/marokko-woestijn.jpg" alt="Désert marocain"><div class="strip-cap">MAROC · DÉSERT</div></div>
-  <div class="strip-item"><img src="assets/photos/marokko-oase.jpg" alt="Oasis marocaine"><div class="strip-cap">MAROC · OASIS DU DRÂA</div></div>
-  <div class="strip-item"><img src="assets/photos/jordanie-wadirum.jpg" alt="Wadi Rum, Jordanie"><div class="strip-cap">JORDANIE · WADI RUM</div></div>
+<div class="strip-wrap">
+  <button class="strip-nav prev" id="stripPrev" aria-label="Précédent">‹</button>
+  <div class="strip" id="photoStrip">
+    <div class="strip-item"><img src="assets/photos/srilanka-worldsend.jpg" alt="World's End, Sri Lanka"><div class="strip-cap">SRI LANKA · WORLD'S END</div></div>
+    <div class="strip-item"><img src="assets/photos/jordanie-petra.jpg" alt="Petra, Jordanie"><div class="strip-cap">JORDANIE · PETRA</div></div>
+    <div class="strip-item"><img src="assets/photos/ecuador-quilotoa.jpg" alt="Lagune du Quilotoa, Équateur"><div class="strip-cap">ÉQUATEUR · QUILOTOA</div></div>
+    <div class="strip-item"><img src="assets/photos/srilanka-sigiriya.jpg" alt="Sigiriya au coucher du soleil, Sri Lanka"><div class="strip-cap">SRI LANKA · SIGIRIYA</div></div>
+    <div class="strip-item"><img src="assets/photos/marokko-woestijn.jpg" alt="Désert marocain"><div class="strip-cap">MAROC · DÉSERT</div></div>
+    <div class="strip-item"><img src="assets/photos/marokko-oase.jpg" alt="Oasis marocaine"><div class="strip-cap">MAROC · OASIS DU DRÂA</div></div>
+    <div class="strip-item"><img src="assets/photos/jordanie-wadirum.jpg" alt="Wadi Rum, Jordanie"><div class="strip-cap">JORDANIE · WADI RUM</div></div>
+  </div>
+  <button class="strip-nav next" id="stripNext" aria-label="Suivant">›</button>
 </div>
 
 <section class="section">
@@ -207,5 +227,11 @@
 </footer>
 
 <script src="assets/nav.js"></script>
+<script>
+  const strip = document.getElementById('photoStrip');
+  const step = 270;
+  document.getElementById('stripNext').addEventListener('click', () => strip.scrollBy({left: step, behavior:'smooth'}));
+  document.getElementById('stripPrev').addEventListener('click', () => strip.scrollBy({left: -step, behavior:'smooth'}));
+</script>
 </body>
 </html>
