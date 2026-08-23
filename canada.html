@@ -167,12 +167,15 @@
   .cdv-chip-link{background:var(--cdv-rust); color:#fff; font-weight:600;}
   .cdv-insta svg{width:15px; height:15px; vertical-align:middle;}
   @media (max-width:640px){
+    .cdv-inner{padding:12px 16px;}
+    .cdv-tabs{width:100%; justify-content:flex-start; gap:2px;}
+    .cdv-tabs a, .cdv-tabs button{padding:6px 9px; font-size:.72rem;}
     .cdv-menu{position:fixed; top:60px; left:4vw; width:92vw; flex-direction:column; max-height:80vh; overflow-y:auto;}
     .cdv-continents{width:100%; flex-direction:row; flex-wrap:wrap; border-right:none; border-bottom:1px solid var(--cdv-paper);}
   }
 </style>
 
-<div class="cdv-topbar"><div class="cdv-inner">
+<nav class="cdv-topbar"><div class="cdv-inner">
   <a href="../index.html" class="cdv-brand">Carnet de voyage <span>D.</span></a>
   <div class="cdv-tabs">
     <a href="../index.html">Accueil</a>
@@ -225,28 +228,13 @@
         <a class="cdv-chip cdv-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="cdv-go">→</span></a>
         <span class="cdv-chip cdv-chip-visited">Turquie<span class="cdv-check">✓</span></span>
       </div>
-      </div>
-      <div class="cdv-panel cdv-hidden" id="cdv-Amerika">
-        <a class="cdv-chip cdv-chip-link" href="../reizen/canada.html">Canada<span class="cdv-go">→</span></a>
-        <span class="cdv-chip cdv-chip-visited">Équateur<span class="cdv-check">✓</span></span>
-      </div>
-      <div class="cdv-panel cdv-hidden" id="cdv-Azië">
-        <span class="cdv-chip cdv-chip-visited">Népal<span class="cdv-check">✓</span></span>
-        <span class="cdv-chip cdv-chip-visited">Sri Lanka<span class="cdv-check">✓</span></span>
-      </div>
-      <div class="cdv-panel cdv-hidden" id="cdv-Afrika">
-        <span class="cdv-chip cdv-chip-visited">Jordanie<span class="cdv-check">✓</span></span>
-        <span class="cdv-chip cdv-chip-visited">Maroc<span class="cdv-check">✓</span></span>
-        <a class="cdv-chip cdv-chip-link" href="../bestemmingen/namibie.html">Namibie<span class="cdv-go">→</span></a>
-        <span class="cdv-chip cdv-chip-visited">Turquie<span class="cdv-check">✓</span></span>
-      </div>
         </div>
       </div>
     </div>
     <a href="../wereldkaart.html">Carte du monde</a>
     <a href="https://www.instagram.com/daphne_discovery" target="_blank" rel="noopener" class="cdv-insta" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
   </div>
-</div></div>
+</div></nav>
 </div>
 <script>
 (function(){
