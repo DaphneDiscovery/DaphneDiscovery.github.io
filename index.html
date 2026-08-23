@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnet de voyage — Daphné</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero.photo-hero{
+    background:
+      linear-gradient(180deg, rgba(24,36,48,.55), rgba(24,36,48,.82) 70%),
+      url('assets/photos/albanie-meer.jpg') center 35%/cover;
+    padding:120px 24px 72px;
+  }
+  .strip{display:flex; gap:16px; overflow-x:auto; padding:6px 24px 20px; scroll-snap-type:x mandatory;}
+  .strip::-webkit-scrollbar{height:8px;}
+  .strip::-webkit-scrollbar-thumb{background:var(--paper-line); border-radius:99px;}
+  .strip-item{
+    position:relative; flex:0 0 auto; width:250px; height:320px; border-radius:6px;
+    overflow:hidden; scroll-snap-align:start; box-shadow:var(--shadow);
+  }
+  .strip-item img{width:100%; height:100%; object-fit:cover; display:block;}
+  .strip-cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:24px 14px 12px;
+    background:linear-gradient(0deg, rgba(15,10,4,.85), transparent);
+    color:#fff; font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.05em;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">Carnet de voyage <span class="mono">D.</span></a>
+    <div class="tabs">
+      <a href="index.html" data-nav="accueil">Accueil</a>
+      <div class="dropdown-wrap">
+        <button class="mm-trigger" id="mmTrigger">Destinations ▾</button>
+        <div class="megamenu" id="megaMenu">
+          <div class="mm-continents">
+      <button class="mm-continent active" data-target="mm-Europa">Europe <span class="mm-count">23</span></button>
+      <button class="mm-continent" data-target="mm-Amerika">Amérique <span class="mm-count">2</span></button>
+      <button class="mm-continent" data-target="mm-Azië">Asie <span class="mm-count">2</span></button>
+      <button class="mm-continent" data-target="mm-Afrika">Afrique <span class="mm-count">4</span></button>
+          </div>
+          <div>
+            <div class="mm-panels">
+      <div class="mm-panel" id="mm-Europa">
+        <span class="mm-chip mm-chip-visited">Albanie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Allemagne<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Autriche<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Açores<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Belgique<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Danemark<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Espagne<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">France<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Géorgie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Hongrie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Irlande<span class="mm-check">✓</span></span>
+        <a class="mm-chip mm-chip-link" href="reizen/islande.html">Islande<span class="mm-go">→</span></a>
+        <span class="mm-chip mm-chip-visited">Italie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Lettonie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Luxembourg<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Monaco<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Norvège<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Pays-Bas<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Pologne<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Portugal<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Royaume-Uni<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Slovénie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Suède<span class="mm-check">✓</span></span>
+      </div>
+      <div class="mm-panel hidden" id="mm-Amerika">
+        <a class="mm-chip mm-chip-link" href="reizen/canada.html">Canada<span class="mm-go">→</span></a>
+        <span class="mm-chip mm-chip-visited">Équateur<span class="mm-check">✓</span></span>
+      </div>
+      <div class="mm-panel hidden" id="mm-Azië">
+        <span class="mm-chip mm-chip-visited">Népal<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Sri Lanka<span class="mm-check">✓</span></span>
+      </div>
+      <div class="mm-panel hidden" id="mm-Afrika">
+        <span class="mm-chip mm-chip-visited">Jordanie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Maroc<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Namibie<span class="mm-check">✓</span></span>
+        <span class="mm-chip mm-chip-visited">Turquie<span class="mm-check">✓</span></span>
+      </div>
+            </div>
+            <div class="mm-panels-footer">31 destinations visitées · <a href="destinations.html">voir le mur des tampons</a></div>
+          </div>
+        </div>
+      </div>
+      <a href="wereldkaart.html" data-nav="carte">Carte du monde</a>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero photo-hero">
+  <div class="hero-eyebrow">Journal de bord &mdash; en cours d'écriture</div>
+  <h1>Un carnet, une carte,<br>et beaucoup trop de bagages.</h1>
+  <p>Chaque voyage a son propre programme interactif : itinéraires jour par jour, cartes, photos et notes de terrain. Cette page rassemble tout, classé par continent.</p>
+  <div class="flightpath">
+    <svg viewBox="0 0 640 24" preserveAspectRatio="none">
+      <line x1="10" y1="12" x2="630" y2="12" stroke="#a9822f" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+      <circle cx="10" cy="12" r="4" fill="#a9822f"/>
+      <path d="M622 6 L636 12 L622 18 Z" fill="#a9822f"/>
+    </svg>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <span class="mono">Programmes en vedette</span>
+    <h2>Prochain embarquement</h2>
+  </div>
+  <div class="card-grid">
+
+    <a class="ticket" href="reizen/canada.html">
+      <div class="ticket-main">
+        <span class="mono">Amérique du Nord</span>
+        <h3>Canada — Rocheuses &amp; Okanagan</h3>
+        <p>WeRoad, 24 août – 6 septembre 2026. Programme complet jour par jour avec cartes.</p>
+        <span class="ticket-arrow">Ouvrir le carnet →</span>
+      </div>
+      <div class="ticket-stub">
+        <span class="code">YYC</span>
+        <span class="date">24.08 → 06.09</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="reizen/islande.html">
+      <div class="ticket-main">
+        <span class="mono">Europe</span>
+        <h3>Islande — Kálfatjörn</h3>
+        <p>8 – 15 août 2026. Landmannalaugar, Reykjanes, Háifoss et le reste du royaume du feu et de la glace.</p>
+        <span class="ticket-arrow">Ouvrir le carnet →</span>
+      </div>
+      <div class="ticket-stub">
+        <span class="code">KEF</span>
+        <span class="date">08.08 → 15.08</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="section-head">
+    <span class="mono">Souvenirs de route</span>
+    <h2>Dernières aventures</h2>
+  </div>
+</section>
+<div class="strip">
+  <div class="strip-item"><img src="assets/photos/srilanka-worldsend.jpg" alt="World's End, Sri Lanka"><div class="strip-cap">SRI LANKA · WORLD'S END</div></div>
+  <div class="strip-item"><img src="assets/photos/jordanie-petra.jpg" alt="Petra, Jordanie"><div class="strip-cap">JORDANIE · PETRA</div></div>
+  <div class="strip-item"><img src="assets/photos/ecuador-quilotoa.jpg" alt="Lagune du Quilotoa, Équateur"><div class="strip-cap">ÉQUATEUR · QUILOTOA</div></div>
+  <div class="strip-item"><img src="assets/photos/srilanka-sigiriya.jpg" alt="Sigiriya au coucher du soleil, Sri Lanka"><div class="strip-cap">SRI LANKA · SIGIRIYA</div></div>
+  <div class="strip-item"><img src="assets/photos/marokko-oase.jpg" alt="Oasis marocaine"><div class="strip-cap">MAROC · OASIS DU DRÂA</div></div>
+  <div class="strip-item"><img src="assets/photos/jordanie-wadirum.jpg" alt="Wadi Rum, Jordanie"><div class="strip-cap">JORDANIE · WADI RUM</div></div>
+</div>
+
+<section class="section">
+  <div class="section-head">
+    <span class="mono">Explorer</span>
+    <h2>Le tour du monde jusqu'ici</h2>
+  </div>
+  <div class="card-grid">
+    <a class="ticket" href="wereldkaart.html">
+      <div class="ticket-main">
+        <span class="mono">31 destinations</span>
+        <h3>Carte du monde</h3>
+        <p>Toutes les destinations visitées, épinglées sur une carte interactive.</p>
+        <span class="ticket-arrow">Voir la carte →</span>
+      </div>
+      <div class="ticket-stub"><span class="code">🌍</span></div>
+    </a>
+    <a class="ticket" href="destinations.html">
+      <div class="ticket-main">
+        <span class="mono">Le mur</span>
+        <h3>Tampons de passeport</h3>
+        <p>La même liste, façon tampons de passeport.</p>
+        <span class="ticket-arrow">Voir →</span>
+      </div>
+      <div class="ticket-stub"><span class="code">★</span></div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  Carnet de voyage personnel &middot; <span class="mono">mis à jour continuellement</span>
+</footer>
+
+<script src="assets/nav.js"></script>
+</body>
+</html>
