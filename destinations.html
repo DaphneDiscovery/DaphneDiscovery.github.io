@@ -14,35 +14,38 @@
   }
   .filter-btn.active{background:var(--ink); color:#fff; border-color:var(--ink);}
 
-  .country-block{margin-bottom:56px;}
-  .country-head{
-    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
-    border-bottom:1px solid var(--paper-line); padding-bottom:10px; margin-bottom:26px;
+  #wall{display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start;}
+  .country-block{
+    background:#fffdf6; border:1px solid var(--paper-line); border-radius:6px;
+    box-shadow:0 6px 16px rgba(20,16,8,.08);
+    padding:14px 18px 18px;
   }
-  .country-head h3{margin:0; font-size:1.6rem;}
-  .country-head .mono{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--rust);}
-  .country-head a{margin-left:auto; font-size:.78rem; color:var(--rust); font-weight:600; text-decoration:none;}
+  .country-head{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    border-bottom:1px solid var(--paper-line); padding-bottom:8px; margin-bottom:16px;
+  }
+  .country-head h3{margin:0; font-size:1.15rem;}
+  .country-head .mono{font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--rust);}
+  .country-head a{margin-left:auto; padding-left:12px; font-size:.75rem; color:var(--rust); font-weight:600; text-decoration:none;}
 
-  .magnet-row{display:flex; flex-wrap:wrap; gap:36px 40px; align-items:center;}
+  .magnet-row{display:flex; flex-wrap:wrap; gap:14px; align-items:center;}
   .magnet{
-    background:none; border:none; padding:0; cursor:zoom-in;
-    width:clamp(150px, 26vw, 230px);
+    margin:0; padding:0; cursor:zoom-in;
+    width:110px;
     transform:rotate(var(--tilt, -2deg));
     transition:transform .2s ease;
   }
+  @media (max-width:640px){ .magnet{width:90px;} }
   .magnet img{
     width:100%; height:auto; display:block;
-    filter:drop-shadow(0 10px 12px rgba(20,16,8,.28)) drop-shadow(0 2px 2px rgba(20,16,8,.2));
+    filter:drop-shadow(0 5px 6px rgba(20,16,8,.28)) drop-shadow(0 1px 1px rgba(20,16,8,.2));
   }
   .magnet:nth-child(2n){--tilt:2.5deg;}
   .magnet:nth-child(3n){--tilt:-1deg;}
   .magnet:hover, .magnet:focus-visible{transform:rotate(0) translateY(-6px) scale(1.04);}
   .magnet:focus-visible{outline:2px solid var(--brass); outline-offset:8px;}
-  .magnet figcaption{
-    margin-top:14px; font-size:.78rem; color:var(--text-muted); text-align:center; line-height:1.4;
-  }
 
-  .todo{margin-top:20px; padding-top:28px; border-top:1px dashed var(--paper-line);}
+  .todo{margin-top:48px; padding-top:28px; border-top:1px dashed var(--paper-line);}
   .todo p{color:var(--text-muted); font-size:.9rem; margin:0 0 14px;}
   .todo-list{display:flex; flex-wrap:wrap; gap:8px;}
   .todo-list span{
@@ -217,8 +220,7 @@
     document.getElementById('countTitle').textContent =
       total + (total === 1 ? ' aimant' : ' aimants') + ', ' + withMagnets.length + ' pays';
 
-    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore d\'aimant pour ce continent.</p>';
-    withMagnets.forEach(land => {
+    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore d\'aimant pour ce continent.</p>';    withMagnets.forEach(land => {
       const page = pageFR[land];
       const block = document.createElement('div');
       block.className = 'country-block';
@@ -228,8 +230,7 @@
         (page ? '<a href="' + page + '">Voir le voyage →</a>' : '') + '</div>' +
         '<div class="magnet-row">' + byCountry[land].map(m =>
           '<figure class="magnet" tabindex="0" role="button" data-img="' + esc(m.img) + '" data-land="' + esc(fr(land)) + '" data-title="' + esc(m.titel) + '">' +
-            '<img src="' + esc(m.img) + '" alt="' + esc(m.titel || 'Aimant ' + fr(land)) + '" loading="lazy">' +
-            (m.titel ? '<figcaption>' + esc(m.titel) + '</figcaption>' : '') +
+            '<img src="' + esc(m.img) + '" alt="' + esc('Aimant ' + fr(land)) + '" loading="lazy">' +
           '</figure>').join('') +
         '</div>';
       wall.appendChild(block);
@@ -255,8 +256,8 @@
   const lb = document.getElementById('lightbox');
   function openMagnet(el){
     document.getElementById('lbImg').src = el.dataset.img;
-    document.getElementById('lbImg').alt = el.dataset.title;
-    document.getElementById('lbCap').innerHTML = '<small>' + esc(el.dataset.land) + '</small>' + esc(el.dataset.title);
+    document.getElementById('lbImg').alt = 'Aimant ' + el.dataset.land;
+    document.getElementById('lbCap').innerHTML = '<small>' + esc(el.dataset.land) + '</small>';
     lb.showModal();
   }
   wall.addEventListener('click', e => { const m = e.target.closest('.magnet'); if (m) openMagnet(m); });
