@@ -6,7 +6,14 @@
 <title>Souvenirs — Carnet de voyage</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px;}
+  .filter-bar{display:flex; flex-wrap:wrap; gap:14px 16px; align-items:center; justify-content:space-between; margin-bottom:36px;}
+  .filters{display:flex; gap:6px; flex-wrap:wrap; align-items:center;}
+  .filters .filter-btn{padding:8px 12px;}
+  .filters.types{padding-left:16px; border-left:1px solid var(--paper-line);}
+  .filters .filter-label{font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--text-muted); margin-right:4px;}
+  .types .filter-btn.active{background:var(--rust); border-color:var(--rust);}
+  @media (max-width:1100px){ .filters.types{padding-left:0; border-left:none;} }
   .filter-btn{
     border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark);
     padding:8px 16px; border-radius:999px; cursor:pointer; font:inherit;
@@ -175,12 +182,22 @@
     <span class="mono" id="filterLabel">Tous les continents</span>
     <h2 id="countTitle"></h2>
   </div>
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">Tout</button>
-    <button class="filter-btn" data-filter="Europa">Europe</button>
-    <button class="filter-btn" data-filter="Amerika">Amérique</button>
-    <button class="filter-btn" data-filter="Azië">Asie</button>
-    <button class="filter-btn" data-filter="Afrika">Afrique</button>
+  <div class="filter-bar">
+    <div class="filters continents">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="Europa">Europe</button>
+      <button class="filter-btn" data-filter="Amerika">Amérique</button>
+      <button class="filter-btn" data-filter="Azië">Asie</button>
+      <button class="filter-btn" data-filter="Afrika">Afrique</button>
+    </div>
+    <div class="filters types">
+      <span class="filter-label">Type</span>
+      <button class="filter-btn active" data-type="all">Tous</button>
+      <button class="filter-btn" data-type="aimant">Aimants</button>
+      <button class="filter-btn" data-type="figurine">Figurines</button>
+      <button class="filter-btn" data-type="art">Œuvres d'art</button>
+      <button class="filter-btn" data-type="objet">Objets</button>
+    </div>
   </div>
 
   <div id="wall"></div>
@@ -203,7 +220,7 @@
 </footer>
 
 <script src="assets/destinations.js"></script>
-<script src="assets/magneten.js?v=1794158385"></script>
+<script src="assets/magneten.js?v=1794163672"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -230,9 +247,8 @@
   DESTINATIONS.forEach(d => { continentOf[d.land] = d.continent; });
   const fr = l => nameFR[l] || l;
 
-  // magneten groeperen per land
-  const byCountry = {};
-  MAGNETEN.forEach(m => { (byCountry[m.land] = byCountry[m.land] || []).push(m); });
+  const typePL = { 'aimant':'aimants', 'figurine':'figurines', 'art':"œuvres d'art", 'objet':'objets' };
+  let curCont = 'all', curType = 'all';
 
   const wall = document.getElementById('wall');
   const todoList = document.getElementById('todoList');
@@ -253,9 +269,18 @@
     wall.appendChild(block);
   }
 
-  function render(filter){
-    document.getElementById('filterLabel').textContent = contFR[filter];
+  function render(){
+    const filter = curCont;
+    document.getElementById('filterLabel').textContent = contFR[filter] +
+      (curType === 'all' ? '' : ' · ' + typePL[curType]);
     const inFilter = l => filter === 'all' || continentOf[l] === filter;
+
+    // souvenirs van het gekozen type groeperen per land
+    const byCountry = {};
+    MAGNETEN.filter(m => curType === 'all' || (m.type || 'aimant') === curType)
+      .forEach(m => { (byCountry[m.land] = byCountry[m.land] || []).push(m); });
+    const hasAny = {};
+    MAGNETEN.forEach(m => { hasAny[m.land] = true; });
 
     // '?' = souvenir waarvan het land nog niet gekend is
     const withMagnets = Object.keys(byCountry).filter(l => l !== '?' && inFilter(l))
@@ -264,27 +289,34 @@
     document.getElementById('countTitle').textContent =
       total + (total === 1 ? ' souvenir' : ' souvenirs') + ', ' + withMagnets.length + ' pays';
 
-    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore de souvenir pour ce continent.</p>';
+    wall.innerHTML = withMagnets.length || (filter === 'all' && byCountry['?']) ? '' :
+      '<p class="empty">Pas encore de souvenir de ce type pour ce continent.</p>';
     withMagnets.forEach(land =>
       addBlock(fr(land), contFR[continentOf[land]] || '', pageFR[land], byCountry[land], ''));
     if (filter === 'all' && byCountry['?'])
       addBlock('À identifier', 'Origine mystère', null, byCountry['?'], ' unknown');
 
-    const missing = [...new Set(DESTINATIONS.map(d => d.land))]
-      .filter(l => inFilter(l) && !byCountry[l])
+    // lijst "nog geen souvenir": enkel zinvol zonder type-filter
+    const missing = curType !== 'all' ? [] : [...new Set(DESTINATIONS.map(d => d.land))]
+      .filter(l => inFilter(l) && !hasAny[l])
       .sort((a,b) => fr(a).localeCompare(fr(b), 'fr'));
     todoList.innerHTML = missing.map(l => '<span>' + esc(fr(l)) + '</span>').join('');
     document.getElementById('todo').hidden = missing.length === 0;
   }
-  render('all');
+  render();
 
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      render(btn.dataset.filter);
+  function hookFilters(sel, key, set){
+    document.querySelectorAll(sel).forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll(sel).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        set(btn.dataset[key]);
+        render();
+      });
     });
-  });
+  }
+  hookFilters('.continents .filter-btn', 'filter', v => { curCont = v; });
+  hookFilters('.types .filter-btn', 'type', v => { curType = v; });
 
   // vergroten
   const lb = document.getElementById('lightbox');

@@ -3,266 +3,319 @@ const MAGNETEN = [
  {
   "img": "assets/magneten/belgie-1.webp",
   "land": "België",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/canada-banff-1.webp",
   "land": "Canada",
-  "regio": "Banff"
+  "regio": "Banff",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/canada-banff-2.webp",
   "land": "Canada",
-  "regio": "Banff"
+  "regio": "Banff",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/canada-banff-3.webp",
   "land": "Canada",
-  "regio": "Banff"
+  "regio": "Banff",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/ecuador-1.webp",
   "land": "Ecuador",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/ecuador-2.webp",
   "land": "Ecuador",
-  "regio": ""
+  "regio": "",
+  "type": "art"
  },
  {
   "img": "assets/magneten/ecuador-3.webp",
   "land": "Ecuador",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-parijs-3.webp",
   "land": "Frankrijk",
-  "regio": "Paris"
+  "regio": "Paris",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-parijs-4.webp",
   "land": "Frankrijk",
-  "regio": "Paris"
+  "regio": "Paris",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-1.webp",
   "land": "Frankrijk",
-  "regio": "Vallée de la Loire"
+  "regio": "Vallée de la Loire",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-tours-2.webp",
   "land": "Frankrijk",
-  "regio": "Tours"
+  "regio": "Tours",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-nancy-1.webp",
   "land": "Frankrijk",
-  "regio": "Nancy"
+  "regio": "Nancy",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/frankrijk-marseille.webp",
   "land": "Frankrijk",
-  "regio": "Marseille"
+  "regio": "Marseille",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/georgie-1.webp",
   "land": "Georgie",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/georgie-2.webp",
   "land": "Georgie",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/ijsland-1.webp",
   "land": "Ijsland",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/ijsland-2.webp",
   "land": "Ijsland",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/italie-napels-2.webp",
   "land": "Italie",
-  "regio": "Naples"
+  "regio": "Naples",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/italie-napels-capri.webp",
   "land": "Italie",
-  "regio": "Capri"
+  "regio": "Capri",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/italie-napels-3.webp",
   "land": "Italie",
-  "regio": "Naples"
+  "regio": "Naples",
+  "type": "art"
  },
  {
   "img": "assets/magneten/jordanie.webp",
   "land": "Jordanië",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/jordanie-1.webp",
   "land": "Jordanië",
-  "regio": ""
+  "regio": "",
+  "type": "art"
  },
  {
   "img": "assets/magneten/jordanie-2.webp",
   "land": "Jordanië",
-  "regio": ""
+  "regio": "",
+  "type": "objet"
  },
  {
   "img": "assets/magneten/jordanie-3.webp",
   "land": "Jordanië",
-  "regio": ""
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/madeira-1.webp",
   "land": "Madeira",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/madeira-2.webp",
   "land": "Madeira",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/namibie-1.webp",
   "land": "Namibië",
-  "regio": ""
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/namibie-2.webp",
   "land": "Namibië",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/namibie-3.webp",
   "land": "Namibië",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/namibie-4.webp",
   "land": "Namibië",
-  "regio": ""
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/nepal-1.webp",
   "land": "Nepal",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/nepal-3.webp",
   "land": "Nepal",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/nepal-2.webp",
   "land": "Nepal",
-  "regio": ""
+  "regio": "",
+  "type": "objet"
  },
  {
   "img": "assets/magneten/nepal-4.webp",
   "land": "Nepal",
-  "regio": ""
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/nepal-5.webp",
   "land": "Nepal",
-  "regio": ""
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/noorwegen-oslo-1.webp",
   "land": "Noorwegen",
-  "regio": "Oslo"
+  "regio": "Oslo",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/oostenrijk-salzburg-1.webp",
   "land": "Oostenrijk",
-  "regio": "Salzbourg"
+  "regio": "Salzbourg",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/oostenrijk-wenen-2.webp",
   "land": "Oostenrijk",
-  "regio": "Vienne"
+  "regio": "Vienne",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/portugal-algarve-1.webp",
   "land": "Portugal",
-  "regio": "Algarve"
+  "regio": "Algarve",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/portugal-porto-2.webp",
   "land": "Portugal",
-  "regio": "Porto"
+  "regio": "Porto",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/portugal-porto-3.webp",
   "land": "Portugal",
-  "regio": "Porto"
+  "regio": "Porto",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/portugal-porto-4.webp",
   "land": "Portugal",
-  "regio": "Porto"
+  "regio": "Porto",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/spanje-madrid.webp",
   "land": "Spanje",
-  "regio": "Madrid"
+  "regio": "Madrid",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/spanje-asturias-1.webp",
   "land": "Spanje",
-  "regio": "Asturies"
+  "regio": "Asturies",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/spanje-valencia-1.webp",
   "land": "Spanje",
-  "regio": "Valence"
+  "regio": "Valence",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/srilanka-1.webp",
   "land": "Sri Lanka",
-  "regio": ""
+  "regio": "",
+  "type": "objet"
  },
  {
   "img": "assets/magneten/srilanka-2.webp",
   "land": "Sri Lanka",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/srilanka-3.webp",
   "land": "Sri Lanka",
-  "regio": ""
+  "regio": "",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/srilanka-4.webp",
   "land": "Sri Lanka",
-  "regio": ""
+  "regio": "",
+  "type": "objet"
  },
  {
   "img": "assets/magneten/turkije-cappadocie-2.webp",
   "land": "Turkije",
-  "regio": "Cappadoce"
+  "regio": "Cappadoce",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/turkije-istanbul-1.webp",
   "land": "Turkije",
-  "regio": "Istanbul"
+  "regio": "Istanbul",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/te-bepalen-1.webp",
   "land": "?",
-  "regio": "Sri Lanka ou Népal ?"
+  "regio": "Sri Lanka ou Népal ?",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/te-bepalen-2.webp",
   "land": "?",
-  "regio": "Sri Lanka ou Népal ?"
+  "regio": "Sri Lanka ou Népal ?",
+  "type": "figurine"
  }
 ];
