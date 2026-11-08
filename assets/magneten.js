@@ -22,7 +22,7 @@ const MAGNETEN = [
   "img": "assets/magneten/canada-banff-3.webp",
   "land": "Canada",
   "regio": "Banff",
-  "type": "aimant"
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/ecuador-1.webp",

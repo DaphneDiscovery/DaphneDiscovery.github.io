@@ -9,21 +9,20 @@
   .filter-bar{display:flex; flex-wrap:wrap; gap:14px 16px; align-items:center; justify-content:space-between; margin-bottom:36px;}
   .filters{display:flex; gap:6px; flex-wrap:wrap; align-items:center;}
   .filters .filter-btn{padding:8px 12px;}
-  /* type-filter: subtiele schuifschakelaar (segmented control) */
-  .filters.types{gap:2px; padding:4px; border-radius:999px; flex-wrap:wrap;
-    background:var(--parchment-2); box-shadow:inset 0 1px 2px rgba(20,16,8,.08);}
-  .types .filter-btn{background:none; border:none; padding:6px 14px; border-radius:999px;
-    font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:.9rem;
-    text-transform:none; letter-spacing:0; color:var(--text-muted);
-    transition:background .15s, color .15s, box-shadow .15s;}
-  .types .filter-btn:hover{color:var(--text-dark);}
-  @media (max-width:640px){
-    .filters.types{flex-wrap:nowrap; overflow-x:auto; max-width:100%; scrollbar-width:none;}
-    .filters.types::-webkit-scrollbar{display:none;}
-    .types .filter-btn{white-space:nowrap; padding:6px 11px; font-size:.85rem;}
+  /* type-filter: compacte dropdown */
+  .type-select{position:relative; display:inline-flex; align-items:center;}
+  .type-select select{
+    appearance:none; -webkit-appearance:none; cursor:pointer;
+    font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:.95rem; color:var(--text-dark);
+    background:#fffdf6; border:1px solid var(--paper-line); border-radius:999px;
+    padding:7px 38px 7px 16px; box-shadow:0 1px 2px rgba(20,16,8,.06);
   }
-  .types .filter-btn.active{background:#fffdf6; color:var(--rust);
-    box-shadow:0 1px 3px rgba(20,16,8,.18);}
+  .type-select select:hover{border-color:var(--brass);}
+  .type-select select:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
+  .type-select select.picked{border-color:var(--rust); color:var(--rust);}
+  .type-select::after{content:""; position:absolute; right:16px; top:50%; width:7px; height:7px;
+    border-right:1.5px solid var(--rust); border-bottom:1.5px solid var(--rust);
+    transform:translateY(-70%) rotate(45deg); pointer-events:none;}
   .filter-btn{
     border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark);
     padding:8px 16px; border-radius:999px; cursor:pointer; font:inherit;
@@ -200,13 +199,15 @@
       <button class="filter-btn" data-filter="Azië">Asie</button>
       <button class="filter-btn" data-filter="Afrika">Afrique</button>
     </div>
-    <div class="filters types">
-      <button class="filter-btn active" data-type="all">Tous les souvenirs</button>
-      <button class="filter-btn" data-type="aimant">Magnets</button>
-      <button class="filter-btn" data-type="figurine">Figurines</button>
-      <button class="filter-btn" data-type="art">Œuvres d'art</button>
-      <button class="filter-btn" data-type="objet">Objets</button>
-    </div>
+    <label class="type-select">
+      <select id="typeSelect" aria-label="Type de souvenir">
+        <option value="all">Tous les souvenirs</option>
+        <option value="aimant">Magnets</option>
+        <option value="figurine">Figurines</option>
+        <option value="art">Œuvres d'art</option>
+        <option value="objet">Objets</option>
+      </select>
+    </label>
   </div>
 
   <div id="wall"></div>
@@ -229,7 +230,7 @@
 </footer>
 
 <script src="assets/destinations.js"></script>
-<script src="assets/magneten.js?v=1794164046"></script>
+<script src="assets/magneten.js?v=1794164234"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -325,7 +326,12 @@
     });
   }
   hookFilters('.continents .filter-btn', 'filter', v => { curCont = v; });
-  hookFilters('.types .filter-btn', 'type', v => { curType = v; });
+  const typeSelect = document.getElementById('typeSelect');
+  typeSelect.addEventListener('change', () => {
+    curType = typeSelect.value;
+    typeSelect.classList.toggle('picked', curType !== 'all');
+    render();
+  });
 
   // vergroten
   const lb = document.getElementById('lightbox');
