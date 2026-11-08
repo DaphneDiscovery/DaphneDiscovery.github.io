@@ -58,6 +58,30 @@
   .strip-nav:hover{background:var(--ink); color:#fff;}
   .strip-nav.prev{left:28px;} .strip-nav.next{right:28px;}
   @media (max-width:640px){.strip-nav{display:none;}}
+
+  /* prochain embarquement : billet mystère */
+  .ticket.mystery{grid-column:1/-1; max-width:760px; cursor:default; position:relative;
+    background:repeating-linear-gradient(-45deg,#fffdf6 0 14px,#faf4e4 14px 28px);}
+  .ticket.mystery:hover{transform:none;}
+  .mystery .ticket-main h3{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .mystery .redacted{display:inline-block; background:var(--ink); color:transparent; border-radius:3px;
+    padding:0 .3em; user-select:none; letter-spacing:.05em;}
+  .mystery-status{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:14px;
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted);}
+  .mystery-status b{color:var(--rust); font-weight:600;}
+  .pulse{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--rust);
+    margin-right:6px; vertical-align:1px; animation:pulse 1.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(182,89,44,.5);} 50%{opacity:.5; box-shadow:0 0 0 6px rgba(182,89,44,0);}}
+  .mystery-stamp{position:absolute; right:130px; top:16px; transform:rotate(-9deg);
+    border:2px solid var(--rust); color:var(--rust); border-radius:4px; padding:3px 10px;
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; opacity:.75;}
+  .flap{display:flex; gap:3px;}
+  .flap span{display:inline-flex; align-items:center; justify-content:center; width:22px; height:30px;
+    background:#10191f; border-radius:3px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1rem;
+    color:#f4eede; position:relative; box-shadow:inset 0 -1px 0 rgba(255,255,255,.06);}
+  .flap span::after{content:""; position:absolute; left:0; right:0; top:50%; height:1px; background:rgba(0,0,0,.55);}
+  @media (max-width:640px){.mystery-stamp{right:14px; top:10px;}}
+  @media (prefers-reduced-motion:reduce){.pulse{animation:none;}}
 </style>
 </head>
 <body>
@@ -156,10 +180,49 @@
 
 <section class="section">
   <div class="section-head">
-    <span class="mono">Programmes en vedette</span>
+    <span class="mono">À l'horizon</span>
     <h2>Prochain embarquement</h2>
   </div>
   <div class="card-grid">
+    <div class="ticket mystery" aria-label="Prochain voyage en préparation">
+      <div class="mystery-stamp">Top secret</div>
+      <div class="ticket-main">
+        <span class="mono">Destination : <span class="redacted">continent</span></span>
+        <h3>En préparation <span class="redacted">Xxxxxxxx</span></h3>
+        <p>Les cartes sont dépliées, les guides s'empilent et la liste des rêves s'allonge… Le prochain carnet s'écrit en coulisses. Bouclez vos ceintures : rendez-vous ici très bientôt.</p>
+        <div class="mystery-status">
+          <span><i class="pulse"></i>Statut : <b>en préparation</b></span>
+          <span>Porte : à confirmer</span>
+          <span>Embarquement : bientôt</span>
+        </div>
+      </div>
+      <div class="ticket-stub">
+        <span class="flap" id="flap"><span>?</span><span>?</span><span>?</span></span>
+        <span class="date">??.?? → ??.??</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="section-head">
+    <span class="mono">Programmes en vedette</span>
+    <h2>Derniers embarquements</h2>
+  </div>
+  <div class="card-grid">
+
+    <a class="ticket" href="reizen/madeira.html">
+      <div class="ticket-main">
+        <span class="mono">Europe</span>
+        <h3>Madère — Levadas &amp; pics</h3>
+        <p>21 – 31 octobre 2026. Funchal, São Vicente et Arco da Calheta : levadas, Pico Ruivo et couchers de soleil sur l'Atlantique.</p>
+        <span class="ticket-arrow">Ouvrir le carnet →</span>
+      </div>
+      <div class="ticket-stub">
+        <span class="code">FNC</span>
+        <span class="date">21.10 → 31.10</span>
+      </div>
+    </a>
 
     <a class="ticket" href="reizen/canada.html">
       <div class="ticket-main">
@@ -244,6 +307,24 @@
 </footer>
 
 <script src="assets/nav.js"></script>
+<script>
+// vertrekbord : de code van de volgende bestemming tourne... sans jamais s'arrêter
+(function(){
+  const cells = document.querySelectorAll('#flap span');
+  if(!cells.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  function roll(){
+    cells.forEach((c, i) => {
+      let n = 6 + i * 4 + Math.floor(Math.random() * 4);
+      const t = setInterval(() => {
+        c.textContent = A[Math.floor(Math.random() * 26)];
+        if(--n <= 0){ clearInterval(t); if(Math.random() < .35) c.textContent = '?'; }
+      }, 55);
+    });
+  }
+  roll(); setInterval(roll, 3200);
+})();
+</script>
 <script>
   const strip = document.getElementById('photoStrip');
   const step = 270;
