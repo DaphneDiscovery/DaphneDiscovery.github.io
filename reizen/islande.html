@@ -195,6 +195,15 @@
   .cdv-chip-visited .cdv-check{color:var(--cdv-teal); font-size:.72rem;}
   .cdv-chip-link{background:var(--cdv-rust); color:#fff; font-weight:600;}
   .cdv-insta svg{width:15px; height:15px; vertical-align:middle;}
+
+  /* menu-inhoud niet laten verkleuren door de stijl van de topbalk */
+  #cdvNav .cdv-menu a.cdv-chip, #cdvNav .cdv-menu button.cdv-continent{text-transform:none; letter-spacing:0; font-family:'Inter',Arial,sans-serif;}
+  #cdvNav .cdv-menu .cdv-chip{font-size:.8rem; padding:6px 11px; border-radius:999px;}
+  #cdvNav .cdv-menu .cdv-chip-link{color:#fff; background:var(--cdv-rust); font-weight:600;}
+  #cdvNav .cdv-menu .cdv-chip-link:hover{background:#9c4a22; color:#fff;}
+  #cdvNav .cdv-menu .cdv-continent{color:var(--cdv-text); font-family:Georgia,serif; font-size:.95rem; padding:9px 10px; border-radius:4px; width:100%;}
+  #cdvNav .cdv-menu .cdv-continent:hover{background:rgba(182,89,44,.08); color:var(--cdv-text);}
+  #cdvNav .cdv-menu .cdv-continent.cdv-active{background:var(--cdv-ink); color:#fff;}
   @media (max-width:640px){
     .cdv-inner{padding:12px 16px;}
     .cdv-tabs{width:100%; justify-content:flex-start; gap:2px;}
