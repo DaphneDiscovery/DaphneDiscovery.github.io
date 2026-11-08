@@ -94,17 +94,18 @@
   .recit p{margin:0; font-style:italic; line-height:1.6; font-size:.98rem;}
   .warn-box{background:#fdecea; border:1px solid #f1b7b0; border-left:4px solid #c0392b; border-radius:8px; padding:12px 16px; margin:10px 0 18px; font-family:Arial, sans-serif; font-size:.9rem; line-height:1.55; color:#5c1f17;}
   .warn-box a{color:#a3281b; text-decoration:underline;}
-  .timeline{display:flex; gap:6px; margin:10px 0 18px; font-family:Arial, sans-serif;}
-  .tl-seg{min-width:0;}
-  .tl-bar{height:8px; border-radius:999px; background:var(--c); position:relative; margin-bottom:10px; opacity:.85;}
-  .tl-bar::before{content:""; position:absolute; left:-2px; top:50%; width:14px; height:14px; border-radius:50%;
-    background:#fff; border:3px solid var(--c); transform:translateY(-50%); box-sizing:border-box;}
-  .tl-name{font-family:Georgia, serif; font-weight:bold; font-size:1.02rem; color:var(--c);}
-  .tl-date{font-size:.75rem; color:var(--muted); margin:1px 0 4px; text-transform:uppercase; letter-spacing:.04em;}
-  .tl-desc{font-size:.82rem; color:#444; line-height:1.45; padding-right:10px;}
+  .timeline{display:flex; gap:28px; margin:14px 0 20px; font-family:Arial, sans-serif;}
+  .tl-seg{flex:1; min-width:0;}
+  .tl-bar{height:2px; background:var(--c); position:relative; margin:5px 0 14px 5px;}
+  .tl-bar::before{content:""; position:absolute; left:-6px; top:50%; width:11px; height:11px; border-radius:50%;
+    background:#fff; border:2px solid var(--c); transform:translateY(-50%); box-sizing:border-box;}
+  .tl-step{font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+  .tl-name{font-family:Georgia, serif; font-weight:bold; font-size:1.15rem; color:var(--c); margin:2px 0 3px;}
+  .tl-date{font-size:.72rem; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em;}
+  .tl-desc{font-size:.8rem; color:#444; line-height:1.5;}
   @media (max-width:640px){
     .timeline{flex-direction:column; gap:12px;}
-    .tl-seg{flex:none !important; padding-left:18px; border-left:4px solid var(--c);}
+    .tl-seg{flex:none; padding-left:16px; border-left:2px solid var(--c);}
     .tl-bar{display:none;}
   }
   .stats{display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 14px; font-family:Arial, sans-serif; font-size:.8rem; color:var(--muted);}
@@ -1160,7 +1161,7 @@
 <div class="notice notice-real"><strong>✅ Ce qu'on a vraiment fait.</strong> Sur place, la météo nous a obligés à adapter le programme : le PR1 a été reporté du samedi 24 au mardi 27, et plusieurs journées ont changé d'ordre. Voici le voyage tel qu'il s'est déroulé, avec les infos pratiques et ce qu'on garde pour une prochaine fois. Le programme imaginé avant le départ reste disponible via le bouton <a href="#overview">Programme proposé</a>.</div>
 <h3 class="cat-heading">Aperçu général du voyage</h3>
 <div class="stats"><div><b>11</b><span>jours</span></div><div><b>3</b><span>bases</span></div><div><b>8</b><span>randonnées</span></div><div><b>7</b><span>couchers du soleil</span></div><div><b>1</b><span>randonnée reportée</span></div></div>
-<p class="extra-p">Onze jours pour faire le tour de Madère en voiture, depuis trois bases successives :</p><div class="timeline"><div class="tl-seg" style="flex:4; --c:#c0392b"><div class="tl-bar"></div><div class="tl-name">Funchal</div><div class="tl-date">21–25 oct. · 4 nuits</div><div class="tl-desc">La capitale et la pointe est : marché, Monte, luges en osier, Blandy's, falaises de São Lourenço</div></div><div class="tl-seg" style="flex:2; --c:#2980b9"><div class="tl-bar"></div><div class="tl-name">São Vicente</div><div class="tl-date">25–27 oct. · 2 nuits</div><div class="tl-desc">La côte nord : levadas dans la laurisylve (PR11, PR9), belvédères, plage noire de Seixal</div></div><div class="tl-seg" style="flex:4; --c:#b8860b"><div class="tl-bar"></div><div class="tl-name">Arco da Calheta</div><div class="tl-date">27–31 oct. · 4 nuits</div><div class="tl-desc">Le sud-ouest, plus sec : dauphins, Cabo Girão, PR1 et PR6, Fanal, Porto Moniz</div></div></div>
+<p class="extra-p">Onze jours pour faire le tour de Madère en voiture, depuis trois bases successives :</p><div class="timeline"><div class="tl-seg" style="--c:#c0675a"><div class="tl-bar"></div><div class="tl-step">Étape 01</div><div class="tl-name">Funchal</div><div class="tl-date">21–25 oct. · 4 nuits</div><div class="tl-desc">La capitale et la pointe est : marché, Monte, luges en osier, Blandy's, falaises de São Lourenço</div></div><div class="tl-seg" style="--c:#4a7ba6"><div class="tl-bar"></div><div class="tl-step">Étape 02</div><div class="tl-name">São Vicente</div><div class="tl-date">25–27 oct. · 2 nuits</div><div class="tl-desc">La côte nord : levadas dans la laurisylve (PR11, PR9), belvédères, plage noire de Seixal</div></div><div class="tl-seg" style="--c:#b08a3e"><div class="tl-bar"></div><div class="tl-step">Étape 03</div><div class="tl-name">Arco da Calheta</div><div class="tl-date">27–31 oct. · 4 nuits</div><div class="tl-desc">Le sud-ouest, plus sec : dauphins, Cabo Girão, PR1 et PR6, Fanal, Porto Moniz</div></div></div>
 <p class="extra-p">La montagne a imposé son rythme : le PR1, prévu le samedi 24, a été annulé à cause du brouillard et refait le mardi 27, avec un coucher du soleil au sommet du Pico Ruivo.</p>
 <h3 class="cat-heading">Les moments forts</h3>
 <ul class="bullets">
