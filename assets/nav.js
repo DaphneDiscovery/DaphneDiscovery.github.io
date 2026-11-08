@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menu.querySelectorAll('.mm-continent').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      menu.querySelectorAll('.mm-continent').forEach(b => b.classList.remove('active'));
+      menu.querySelectorAll('.mm-continent').forEach(b => b.classList.remove('active', 'mm-active'));
       menu.querySelectorAll('.mm-panel').forEach(p => p.classList.add('hidden'));
       btn.classList.add('active');
-      document.getElementById(btn.dataset.target).classList.remove('hidden');
+      const panel = document.getElementById(btn.dataset.target);
+      panel.classList.remove('hidden', 'mm-hidden');
     });
   });
 });

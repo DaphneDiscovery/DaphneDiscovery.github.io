@@ -3,8 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Destinations — Carnet de voyage</title>
+<title>Souvenirs — Carnet de voyage</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px;}
+  .filter-btn{
+    border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark);
+    padding:8px 16px; border-radius:999px; cursor:pointer; font:inherit;
+    font-size:.78rem; text-transform:uppercase; letter-spacing:.05em;
+  }
+  .filter-btn.active{background:var(--ink); color:#fff; border-color:var(--ink);}
+
+  .country-block{margin-bottom:56px;}
+  .country-head{
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    border-bottom:1px solid var(--paper-line); padding-bottom:10px; margin-bottom:26px;
+  }
+  .country-head h3{margin:0; font-size:1.6rem;}
+  .country-head .mono{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--rust);}
+  .country-head a{margin-left:auto; font-size:.78rem; color:var(--rust); font-weight:600; text-decoration:none;}
+
+  .magnet-row{display:flex; flex-wrap:wrap; gap:36px 40px; align-items:center;}
+  .magnet{
+    background:none; border:none; padding:0; cursor:zoom-in;
+    width:clamp(150px, 26vw, 230px);
+    transform:rotate(var(--tilt, -2deg));
+    transition:transform .2s ease;
+  }
+  .magnet img{
+    width:100%; height:auto; display:block;
+    filter:drop-shadow(0 10px 12px rgba(20,16,8,.28)) drop-shadow(0 2px 2px rgba(20,16,8,.2));
+  }
+  .magnet:nth-child(2n){--tilt:2.5deg;}
+  .magnet:nth-child(3n){--tilt:-1deg;}
+  .magnet:hover, .magnet:focus-visible{transform:rotate(0) translateY(-6px) scale(1.04);}
+  .magnet:focus-visible{outline:2px solid var(--brass); outline-offset:8px;}
+  .magnet figcaption{
+    margin-top:14px; font-size:.78rem; color:var(--text-muted); text-align:center; line-height:1.4;
+  }
+
+  .todo{margin-top:20px; padding-top:28px; border-top:1px dashed var(--paper-line);}
+  .todo p{color:var(--text-muted); font-size:.9rem; margin:0 0 14px;}
+  .todo-list{display:flex; flex-wrap:wrap; gap:8px;}
+  .todo-list span{
+    font-size:.8rem; padding:6px 12px; border-radius:999px;
+    background:var(--parchment-2); color:var(--text-muted);
+  }
+  .empty{color:var(--text-muted); font-style:italic;}
+
+  .lightbox{
+    border:none; padding:0; background:transparent; max-width:min(92vw, 820px);
+  }
+  .lightbox::backdrop{background:rgba(22,30,36,.82);}
+  .lightbox img{width:100%; max-height:80vh; object-fit:contain; display:block;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.45));}
+  .lightbox p{color:#f4eede; text-align:center; font-family:'Fraunces',serif; font-size:1.15rem; margin:16px 0 0;}
+  .lightbox p small{display:block; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.2em; color:var(--brass); text-transform:uppercase; margin-bottom:4px;}
+  .lightbox-close{
+    position:fixed; top:16px; right:20px; width:42px; height:42px; border-radius:50%;
+    border:1px solid rgba(255,255,255,.3); background:rgba(0,0,0,.3); color:#fff; font-size:1.3rem; cursor:pointer;
+  }
+</style>
 </head>
 <body>
 
@@ -64,7 +123,7 @@
         <a class="mm-chip mm-chip-link" href="bestemmingen/turquie.html">Turquie<span class="mm-go">→</span></a>
       </div>
             </div>
-            <div class="mm-panels-footer">31 destinations visitées · <a href="destinations.html">voir le mur des tampons</a></div>
+            <div class="mm-panels-footer">31 destinations visitées · <a href="destinations.html">voir le mur des aimants</a></div>
           </div>
         </div>
       </div>
@@ -78,32 +137,43 @@
 
 
 <header class="hero" style="padding:64px 24px 48px;">
-  <div class="hero-eyebrow">Onglet — Destinations</div>
-  <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Le mur des tampons</h1>
-  <p>Tous les endroits déjà visités, un tampon de passeport par séjour.</p>
+  <div class="hero-eyebrow">Onglet — Souvenirs</div>
+  <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Le mur des aimants</h1>
+  <p>Un petit aimant ramené de chaque voyage. Clique sur un aimant pour l'agrandir.</p>
 </header>
 
 <section class="section">
   <div class="section-head">
     <span class="mono" id="filterLabel">Tous les continents</span>
-    <h2>31 pays, 62 séjours</h2>
+    <h2 id="countTitle"></h2>
   </div>
-  <div class="tabs" style="margin-bottom:28px;">
-    <button class="filter-btn active" data-filter="all" style="border:1px solid var(--paper-line); background:var(--ink); color:#fff; padding:8px 16px; border-radius:999px; cursor:pointer; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;">Tout</button>
-    <button class="filter-btn" data-filter="Europa" style="border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark); padding:8px 16px; border-radius:999px; cursor:pointer; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;">Europe</button>
-    <button class="filter-btn" data-filter="Amerika" style="border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark); padding:8px 16px; border-radius:999px; cursor:pointer; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;">Amérique</button>
-    <button class="filter-btn" data-filter="Azië" style="border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark); padding:8px 16px; border-radius:999px; cursor:pointer; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;">Asie</button>
-    <button class="filter-btn" data-filter="Afrika" style="border:1px solid var(--paper-line); background:#fffdf6; color:var(--text-dark); padding:8px 16px; border-radius:999px; cursor:pointer; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em;">Afrique</button>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Tout</button>
+    <button class="filter-btn" data-filter="Europa">Europe</button>
+    <button class="filter-btn" data-filter="Amerika">Amérique</button>
+    <button class="filter-btn" data-filter="Azië">Asie</button>
+    <button class="filter-btn" data-filter="Afrika">Afrique</button>
   </div>
 
-  <div class="stamp-wall" id="stampWall"></div>
+  <div id="wall"></div>
+  <div class="todo" id="todo">
+    <p>Pays visités dont l'aimant n'est pas encore sur le mur :</p>
+    <div class="todo-list" id="todoList"></div>
+  </div>
 </section>
+
+<dialog class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="Fermer">×</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
 
 <footer>
   <a href="index.html" class="mono">← Retour à l'accueil</a>
 </footer>
 
 <script src="assets/destinations.js"></script>
+<script src="assets/magneten.js"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -115,38 +185,87 @@
     'Spanje':'Espagne','Zweden':'Suède','Canada':'Canada','Ecuador':'Équateur','Nepal':'Népal',
     'Sri Lanka':'Sri Lanka','Jordanië':'Jordanie','Marokko':'Maroc','Namibië':'Namibie','Turkije':'Turquie'
   };
+  const pageFR = {
+    'Ijsland':'reizen/islande.html','Canada':'reizen/canada.html','Albanië':'bestemmingen/albanie.html',
+    'Duitsland':'bestemmingen/allemagne.html','België':'bestemmingen/belgique.html','Spanje':'bestemmingen/espagne.html',
+    'Frankrijk':'bestemmingen/france.html','Georgie':'bestemmingen/georgie.html','Hongarije':'bestemmingen/hongrie.html',
+    'Italie':'bestemmingen/italie.html','Jordanië':'bestemmingen/jordanie.html','Luxemburg':'bestemmingen/luxembourg.html',
+    'Marokko':'bestemmingen/maroc.html','Namibië':'bestemmingen/namibie.html','Oostenrijk':'bestemmingen/oostenrijk.html',
+    'Sri Lanka':'bestemmingen/sri-lanka.html','Turkije':'bestemmingen/turquie.html'
+  };
   const contFR = { 'Europa':'Europe', 'Amerika':'Amérique', 'Azië':'Asie', 'Afrika':'Afrique', 'all':'Tous les continents' };
 
-  const wall = document.getElementById('stampWall');
+  // continent per land, uit de lijst van alle reizen
+  const continentOf = {};
+  DESTINATIONS.forEach(d => { continentOf[d.land] = d.continent; });
+  const fr = l => nameFR[l] || l;
+
+  // magneten groeperen per land
+  const byCountry = {};
+  MAGNETEN.forEach(m => { (byCountry[m.land] = byCountry[m.land] || []).push(m); });
+
+  const wall = document.getElementById('wall');
+  const todoList = document.getElementById('todoList');
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
   function render(filter){
-    wall.innerHTML = '';
-    document.getElementById('filterLabel').textContent = contFR[filter] || 'Tous les continents';
-    DESTINATIONS
-      .filter(d => filter === 'all' || d.continent === filter)
-      .forEach(function(d){
-        const div = document.createElement('div');
-        div.className = 'stamp';
-        const label = nameFR[d.land] || d.land;
-        div.innerHTML =
-          '<span class="country">' + label + '</span>' +
-          (d.regio ? '<span class="place">' + d.regio + '</span>' : '');
-        wall.appendChild(div);
-      });
+    document.getElementById('filterLabel').textContent = contFR[filter];
+    const inFilter = l => filter === 'all' || continentOf[l] === filter;
+
+    const withMagnets = Object.keys(byCountry).filter(inFilter).sort((a,b) => fr(a).localeCompare(fr(b), 'fr'));
+    const total = withMagnets.reduce((n, l) => n + byCountry[l].length, 0);
+    document.getElementById('countTitle').textContent =
+      total + (total === 1 ? ' aimant' : ' aimants') + ', ' + withMagnets.length + ' pays';
+
+    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore d\'aimant pour ce continent.</p>';
+    withMagnets.forEach(land => {
+      const page = pageFR[land];
+      const block = document.createElement('div');
+      block.className = 'country-block';
+      block.innerHTML =
+        '<div class="country-head"><h3>' + esc(fr(land)) + '</h3>' +
+        '<span class="mono">' + esc(contFR[continentOf[land]] || '') + '</span>' +
+        (page ? '<a href="' + page + '">Voir le voyage →</a>' : '') + '</div>' +
+        '<div class="magnet-row">' + byCountry[land].map(m =>
+          '<figure class="magnet" tabindex="0" role="button" data-img="' + esc(m.img) + '" data-land="' + esc(fr(land)) + '" data-title="' + esc(m.titel) + '">' +
+            '<img src="' + esc(m.img) + '" alt="' + esc(m.titel || 'Aimant ' + fr(land)) + '" loading="lazy">' +
+            (m.titel ? '<figcaption>' + esc(m.titel) + '</figcaption>' : '') +
+          '</figure>').join('') +
+        '</div>';
+      wall.appendChild(block);
+    });
+
+    const missing = [...new Set(DESTINATIONS.map(d => d.land))]
+      .filter(l => inFilter(l) && !byCountry[l])
+      .sort((a,b) => fr(a).localeCompare(fr(b), 'fr'));
+    todoList.innerHTML = missing.map(l => '<span>' + esc(fr(l)) + '</span>').join('');
+    document.getElementById('todo').hidden = missing.length === 0;
   }
   render('all');
 
-  document.querySelectorAll('.filter-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('active');
-        b.style.background = '#fffdf6'; b.style.color = 'var(--text-dark)';
-      });
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      btn.style.background = 'var(--ink)'; btn.style.color = '#fff';
       render(btn.dataset.filter);
     });
   });
+
+  // vergroten
+  const lb = document.getElementById('lightbox');
+  function openMagnet(el){
+    document.getElementById('lbImg').src = el.dataset.img;
+    document.getElementById('lbImg').alt = el.dataset.title;
+    document.getElementById('lbCap').innerHTML = '<small>' + esc(el.dataset.land) + '</small>' + esc(el.dataset.title);
+    lb.showModal();
+  }
+  wall.addEventListener('click', e => { const m = e.target.closest('.magnet'); if (m) openMagnet(m); });
+  wall.addEventListener('keydown', e => {
+    const m = e.target.closest('.magnet');
+    if (m && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openMagnet(m); }
+  });
+  document.getElementById('lbClose').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
 </script>
 
 </body>

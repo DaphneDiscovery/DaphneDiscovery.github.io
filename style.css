@@ -69,6 +69,10 @@ a{color:inherit;}
 }
 .tabs a:hover{background:rgba(255,255,255,.08); color:#fff;}
 .tabs a.active{background:var(--brass); color:var(--ink); font-weight:600;}
+.insta-link{display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;}
+.insta-link svg{width:15px; height:15px; flex-shrink:0;}
+.mm-panel.mm-hidden{display:none;}
+.mm-continent.mm-active{background:var(--ink); color:#fff;}
 
 /* ---------- hero ---------- */
 .hero{

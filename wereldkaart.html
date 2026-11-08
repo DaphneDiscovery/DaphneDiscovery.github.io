@@ -84,7 +84,7 @@
         <a class="mm-chip mm-chip-link" href="bestemmingen/turquie.html">Turquie<span class="mm-go">→</span></a>
       </div>
             </div>
-            <div class="mm-panels-footer">31 destinations visitées · <a href="destinations.html">voir le mur des tampons</a></div>
+            <div class="mm-panels-footer">31 destinations visitées · <a href="destinations.html">voir le mur des aimants</a></div>
           </div>
         </div>
       </div>
@@ -142,8 +142,8 @@
   const linked = { 'Ijsland':'reizen/islande.html', 'Canada':'reizen/canada.html' };
 
   const map = L.map('map', { scrollWheelZoom:false }).setView([30, 15], 2);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution:'&copy; OpenStreetMap &copy; CARTO',
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:'&copy; OpenStreetMap contributors',
     maxZoom:18
   }).addTo(map);
 
