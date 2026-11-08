@@ -292,7 +292,7 @@ const MAGNETEN = [
   "img": "assets/magneten/srilanka-4.webp",
   "land": "Sri Lanka",
   "regio": "",
-  "type": "objet"
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/turkije-cappadocie-2.webp",
