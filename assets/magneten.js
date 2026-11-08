@@ -36,11 +36,6 @@ const MAGNETEN = [
   "regio": ""
  },
  {
-  "img": "assets/magneten/frankrijk-1.webp",
-  "land": "Frankrijk",
-  "regio": ""
- },
- {
   "img": "assets/magneten/frankrijk-parijs-3.webp",
   "land": "Frankrijk",
   "regio": "Paris"
@@ -49,6 +44,11 @@ const MAGNETEN = [
   "img": "assets/magneten/frankrijk-parijs-4.webp",
   "land": "Frankrijk",
   "regio": "Paris"
+ },
+ {
+  "img": "assets/magneten/frankrijk-1.webp",
+  "land": "Frankrijk",
+  "regio": "Vallée de la Loire"
  },
  {
   "img": "assets/magneten/frankrijk-tours-2.webp",
@@ -86,14 +86,14 @@ const MAGNETEN = [
   "regio": ""
  },
  {
-  "img": "assets/magneten/italie-napels-capri.webp",
-  "land": "Italie",
-  "regio": "Capri"
- },
- {
   "img": "assets/magneten/italie-napels-2.webp",
   "land": "Italie",
   "regio": "Naples"
+ },
+ {
+  "img": "assets/magneten/italie-napels-capri.webp",
+  "land": "Italie",
+  "regio": "Capri"
  },
  {
   "img": "assets/magneten/jordanie.webp",
@@ -151,12 +151,12 @@ const MAGNETEN = [
   "regio": ""
  },
  {
-  "img": "assets/magneten/nepal-2.webp",
+  "img": "assets/magneten/nepal-3.webp",
   "land": "Nepal",
   "regio": ""
  },
  {
-  "img": "assets/magneten/nepal-3.webp",
+  "img": "assets/magneten/nepal-2.webp",
   "land": "Nepal",
   "regio": ""
  },
@@ -258,11 +258,11 @@ const MAGNETEN = [
  {
   "img": "assets/magneten/te-bepalen-1.webp",
   "land": "?",
-  "regio": ""
+  "regio": "Sri Lanka ou Népal ?"
  },
  {
   "img": "assets/magneten/te-bepalen-2.webp",
   "land": "?",
-  "regio": ""
+  "regio": "Sri Lanka ou Népal ?"
  }
 ];

@@ -149,12 +149,12 @@
         <a class="mm-chip mm-chip-link" href="bestemmingen/turquie.html">Turquie<span class="mm-go">→</span></a>
       </div>
             </div>
-            <div class="mm-panels-footer">32 destinations visitées · <a href="destinations.html">voir le mur des aimants</a></div>
+            <div class="mm-panels-footer">32 destinations visitées · <a href="destinations.html">voir le mur des souvenirs</a></div>
           </div>
         </div>
       </div>
       <a href="wereldkaart.html" data-nav="carte">Carte du monde</a>
-      <a href="destinations.html" data-nav="aimants" class="active">Aimants</a>
+      <a href="destinations.html" data-nav="souvenirs" class="active">Souvenirs</a>
       <a href="https://www.instagram.com/daphne_discovery" target="_blank" rel="noopener" class="insta-link" style="margin-left:6px; padding:8px 14px;" title="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
       </a>
@@ -165,7 +165,7 @@
 
 <header class="hero" style="padding:64px 24px 48px;">
   <div class="hero-eyebrow">Onglet — Souvenirs</div>
-  <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Le mur des aimants</h1>
+  <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Le mur des souvenirs</h1>
   <p>Pas de retour sans son petit souvenir ! Surtout des aimants, mais aussi des figurines, de petites œuvres d'art et autres trésors de voyage : du chameau de Jordanie au tuk-tuk du Sri Lanka, chacun raconte un bout de route. Voici la collection, pays par pays.</p>
   <p class="hero-hint">Clique sur un souvenir pour l'agrandir</p>
 </header>
@@ -203,7 +203,7 @@
 </footer>
 
 <script src="assets/destinations.js"></script>
-<script src="assets/magneten.js?v=1794156098"></script>
+<script src="assets/magneten.js?v=1794157030"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -247,7 +247,7 @@
       (page ? '<a href="' + page + '">Voir le voyage →</a>' : '') + '</div>' +
       '<div class="magnet-row">' + items.map(m =>
         '<figure class="magnet" tabindex="0" role="button" data-img="' + esc(m.img) + '" data-land="' + esc(title) + '" data-regio="' + esc(m.regio || '') + '">' +
-          '<img src="' + esc(m.img) + '" alt="' + esc('Aimant ' + title) + '" loading="lazy">' +
+          '<img src="' + esc(m.img) + '" alt="' + esc('Souvenir ' + title) + '" loading="lazy">' +
         '</figure>').join('') +
       '</div>';
     wall.appendChild(block);
@@ -264,7 +264,7 @@
     document.getElementById('countTitle').textContent =
       total + (total === 1 ? ' souvenir' : ' souvenirs') + ', ' + withMagnets.length + ' pays';
 
-    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore d\'aimant pour ce continent.</p>';
+    wall.innerHTML = withMagnets.length ? '' : '<p class="empty">Pas encore de souvenir pour ce continent.</p>';
     withMagnets.forEach(land =>
       addBlock(fr(land), contFR[continentOf[land]] || '', pageFR[land], byCountry[land], ''));
     if (filter === 'all' && byCountry['?'])
