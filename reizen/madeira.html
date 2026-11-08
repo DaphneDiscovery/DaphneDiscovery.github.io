@@ -94,10 +94,10 @@
   .recit p{margin:0; font-style:italic; line-height:1.6; font-size:.98rem;}
   .warn-box{background:#fdecea; border:1px solid #f1b7b0; border-left:4px solid #c0392b; border-radius:8px; padding:12px 16px; margin:10px 0 18px; font-family:Arial, sans-serif; font-size:.9rem; line-height:1.55; color:#5c1f17;}
   .warn-box a{color:#a3281b; text-decoration:underline;}
-  .stats{display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 14px;}
-  .stats div{flex:1 1 110px; background:var(--accent-light); border-radius:10px; padding:10px 12px; text-align:center; font-family:Arial, sans-serif;}
-  .stats b{display:block; font-family:Georgia, serif; font-size:1.7rem; color:var(--accent); line-height:1.1;}
-  .stats span{font-size:.78rem; color:var(--muted);}
+  .stats{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 0; margin:2px 0 12px; font-family:Arial, sans-serif; font-size:.85rem; color:var(--muted);}
+  .stats div{display:inline-flex; align-items:baseline; gap:5px;}
+  .stats div + div::before{content:"·"; margin:0 12px; color:var(--border);}
+  .stats b{font-family:Georgia, serif; font-size:1.1rem; font-weight:normal; color:var(--accent);}
   .notice-real{background:#e6f2ea; border-left-color:var(--green); color:#21452f;}
   @media (max-width:640px){ .ed-switch button{min-width:0; flex:1; padding:8px 10px; font-size:.85rem;} }
 </style>
