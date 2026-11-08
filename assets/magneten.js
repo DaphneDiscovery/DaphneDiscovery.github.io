@@ -96,6 +96,11 @@ const MAGNETEN = [
   "regio": "Capri"
  },
  {
+  "img": "assets/magneten/italie-napels-3.webp",
+  "land": "Italie",
+  "regio": "Naples"
+ },
+ {
   "img": "assets/magneten/jordanie.webp",
   "land": "Jordanië",
   "regio": ""
@@ -202,11 +207,6 @@ const MAGNETEN = [
  },
  {
   "img": "assets/magneten/portugal-porto-4.webp",
-  "land": "Portugal",
-  "regio": "Porto"
- },
- {
-  "img": "assets/magneten/portugal-porto-5.webp",
   "land": "Portugal",
   "regio": "Porto"
  },
