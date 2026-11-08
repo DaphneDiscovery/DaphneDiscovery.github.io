@@ -193,7 +193,7 @@
     <div class="filters types">
       <span class="filter-label">Type</span>
       <button class="filter-btn active" data-type="all">Tous</button>
-      <button class="filter-btn" data-type="aimant">Aimants</button>
+      <button class="filter-btn" data-type="aimant">Magnets</button>
       <button class="filter-btn" data-type="figurine">Figurines</button>
       <button class="filter-btn" data-type="art">Œuvres d'art</button>
       <button class="filter-btn" data-type="objet">Objets</button>
@@ -247,7 +247,7 @@
   DESTINATIONS.forEach(d => { continentOf[d.land] = d.continent; });
   const fr = l => nameFR[l] || l;
 
-  const typePL = { 'aimant':'aimants', 'figurine':'figurines', 'art':"œuvres d'art", 'objet':'objets' };
+  const typePL = { 'aimant':'magnets', 'figurine':'figurines', 'art':"œuvres d'art", 'objet':'objets' };
   let curCont = 'all', curType = 'all';
 
   const wall = document.getElementById('wall');
