@@ -73,6 +73,12 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/frankrijk-parijs-pin.webp",
+  "land": "Frankrijk",
+  "regio": "Paris",
+  "type": "pin"
+ },
+ {
   "img": "assets/magneten/frankrijk-1.webp",
   "land": "Frankrijk",
   "regio": "Vallée de la Loire",
@@ -101,12 +107,6 @@ const MAGNETEN = [
   "land": "Frankrijk",
   "regio": "Lourdes",
   "type": "porte-cle"
- },
- {
-  "img": "assets/magneten/frankrijk-parijs-pin.webp",
-  "land": "Frankrijk",
-  "regio": "Paris",
-  "type": "pin"
  },
  {
   "img": "assets/magneten/georgie-1.webp",
