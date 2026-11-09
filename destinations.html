@@ -182,7 +182,7 @@
 <header class="hero" style="padding:64px 24px 48px;">
   <div class="hero-eyebrow">Onglet — Souvenirs</div>
   <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Le mur des souvenirs</h1>
-  <p>Pas de retour sans son petit souvenir ! Surtout des magnets, mais aussi des figurines, de petites œuvres d'art et autres trésors de voyage : du chameau de Jordanie au tuk-tuk du Sri Lanka, chacun raconte un bout de route. Voici la collection, pays par pays.</p>
+  <p>Pas de retour sans son petit souvenir ! Surtout des magnets, mais aussi des pin's, des porte-clés, des figurines, de petites œuvres d'art et autres trésors de voyage : du chameau de Jordanie au tuk-tuk du Sri Lanka, en passant par la Vespa d'Italie, chacun raconte un bout de route. Voici la collection, pays par pays.</p>
   <p class="hero-hint">Clique sur un souvenir pour l'agrandir</p>
 </header>
 
@@ -204,6 +204,8 @@
         <option value="all">Tous les souvenirs</option>
         <option value="aimant">Magnets</option>
         <option value="figurine">Figurines</option>
+        <option value="pin">Pin's</option>
+        <option value="porte-cle">Porte-clés</option>
         <option value="art">Œuvres d'art</option>
         <option value="objet">Objets</option>
       </select>
@@ -230,7 +232,7 @@
 </footer>
 
 <script src="assets/destinations.js"></script>
-<script src="assets/magneten.js?v=1794164234"></script>
+<script src="assets/magneten.js?v=1794253450"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -257,7 +259,7 @@
   DESTINATIONS.forEach(d => { continentOf[d.land] = d.continent; });
   const fr = l => nameFR[l] || l;
 
-  const typePL = { 'aimant':'magnets', 'figurine':'figurines', 'art':"œuvres d'art", 'objet':'objets' };
+  const typePL = { 'aimant':'magnets', 'figurine':'figurines', 'art':"œuvres d'art", 'objet':'objets', 'pin':"pin's", 'porte-cle':'porte-clés' };
   let curCont = 'all', curType = 'all';
 
   const wall = document.getElementById('wall');

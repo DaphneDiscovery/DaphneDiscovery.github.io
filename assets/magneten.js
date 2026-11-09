@@ -25,6 +25,18 @@ const MAGNETEN = [
   "type": "figurine"
  },
  {
+  "img": "assets/magneten/canada-pin-1.webp",
+  "land": "Canada",
+  "regio": "",
+  "type": "pin"
+ },
+ {
+  "img": "assets/magneten/canada-pin-2.webp",
+  "land": "Canada",
+  "regio": "",
+  "type": "pin"
+ },
+ {
   "img": "assets/magneten/ecuador-1.webp",
   "land": "Ecuador",
   "regio": "",
@@ -41,6 +53,12 @@ const MAGNETEN = [
   "land": "Ecuador",
   "regio": "",
   "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/ecuador-lama.webp",
+  "land": "Ecuador",
+  "regio": "",
+  "type": "figurine"
  },
  {
   "img": "assets/magneten/frankrijk-parijs-3.webp",
@@ -79,6 +97,18 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/frankrijk-lourdes-1.webp",
+  "land": "Frankrijk",
+  "regio": "Lourdes",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/frankrijk-parijs-pin.webp",
+  "land": "Frankrijk",
+  "regio": "Paris",
+  "type": "pin"
+ },
+ {
   "img": "assets/magneten/georgie-1.webp",
   "land": "Georgie",
   "regio": "",
@@ -91,6 +121,12 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/georgie-sleutelhanger.webp",
+  "land": "Georgie",
+  "regio": "",
+  "type": "porte-cle"
+ },
+ {
   "img": "assets/magneten/ijsland-1.webp",
   "land": "Ijsland",
   "regio": "",
@@ -101,6 +137,12 @@ const MAGNETEN = [
   "land": "Ijsland",
   "regio": "",
   "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/ijsland-pin.webp",
+  "land": "Ijsland",
+  "regio": "",
+  "type": "pin"
  },
  {
   "img": "assets/magneten/italie-napels-2.webp",
@@ -119,6 +161,18 @@ const MAGNETEN = [
   "land": "Italie",
   "regio": "Naples",
   "type": "art"
+ },
+ {
+  "img": "assets/magneten/italie-venetie.webp",
+  "land": "Italie",
+  "regio": "Venise",
+  "type": "objet"
+ },
+ {
+  "img": "assets/magneten/italie-vespa.webp",
+  "land": "Italie",
+  "regio": "",
+  "type": "porte-cle"
  },
  {
   "img": "assets/magneten/jordanie.webp",
@@ -157,6 +211,12 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/madeira-pin.webp",
+  "land": "Madeira",
+  "regio": "",
+  "type": "pin"
+ },
+ {
   "img": "assets/magneten/namibie-1.webp",
   "land": "Namibië",
   "regio": "",
@@ -179,6 +239,24 @@ const MAGNETEN = [
   "land": "Namibië",
   "regio": "",
   "type": "figurine"
+ },
+ {
+  "img": "assets/magneten/namibie-sleutelhanger-1.webp",
+  "land": "Namibië",
+  "regio": "",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/namibie-sleutelhanger-2.webp",
+  "land": "Namibië",
+  "regio": "",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/namibie-sleutelhanger-3.webp",
+  "land": "Namibië",
+  "regio": "",
+  "type": "porte-cle"
  },
  {
   "img": "assets/magneten/nepal-1.webp",
@@ -227,6 +305,24 @@ const MAGNETEN = [
   "land": "Oostenrijk",
   "regio": "Vienne",
   "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/oostenrijk-wenen-pin.webp",
+  "land": "Oostenrijk",
+  "regio": "Vienne",
+  "type": "pin"
+ },
+ {
+  "img": "assets/magneten/oostenrijk-wenen-viool.webp",
+  "land": "Oostenrijk",
+  "regio": "Vienne",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/oostenrijk-pin.webp",
+  "land": "Oostenrijk",
+  "regio": "",
+  "type": "pin"
  },
  {
   "img": "assets/magneten/portugal-algarve-1.webp",
@@ -305,6 +401,60 @@ const MAGNETEN = [
   "land": "Turkije",
   "regio": "Istanbul",
   "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/turkije-1.webp",
+  "land": "Turkije",
+  "regio": "",
+  "type": "objet"
+ },
+ {
+  "img": "assets/magneten/engeland-1.webp",
+  "land": "Groot-Brittanie",
+  "regio": "",
+  "type": "objet"
+ },
+ {
+  "img": "assets/magneten/hongarije-1.webp",
+  "land": "Hongarije",
+  "regio": "Budapest",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/letland-1.webp",
+  "land": "Letland",
+  "regio": "Riga",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/marokko-1.webp",
+  "land": "Marokko",
+  "regio": "",
+  "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/slovenie-1.webp",
+  "land": "Slovenië",
+  "regio": "Bled",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/slovenie-2.webp",
+  "land": "Slovenië",
+  "regio": "",
+  "type": "objet"
+ },
+ {
+  "img": "assets/magneten/zweden-stockholm-1.webp",
+  "land": "Zweden",
+  "regio": "Stockholm",
+  "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/zweden-stockholm-2.webp",
+  "land": "Zweden",
+  "regio": "Stockholm",
+  "type": "objet"
  },
  {
   "img": "assets/magneten/te-bepalen-1.webp",
