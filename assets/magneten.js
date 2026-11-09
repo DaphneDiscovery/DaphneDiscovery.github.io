@@ -307,22 +307,24 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/oostenrijk-pin.webp",
+  "land": "Oostenrijk",
+  "regio": "",
+  "type": "pin",
+  "groot": true
+ },
+ {
   "img": "assets/magneten/oostenrijk-wenen-pin.webp",
   "land": "Oostenrijk",
   "regio": "Vienne",
-  "type": "pin"
+  "type": "pin",
+  "groot": true
  },
  {
   "img": "assets/magneten/oostenrijk-wenen-viool.webp",
   "land": "Oostenrijk",
   "regio": "Vienne",
   "type": "porte-cle"
- },
- {
-  "img": "assets/magneten/oostenrijk-pin.webp",
-  "land": "Oostenrijk",
-  "regio": "",
-  "type": "pin"
  },
  {
   "img": "assets/magneten/portugal-algarve-1.webp",

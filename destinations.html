@@ -52,7 +52,8 @@
     transition:transform .2s ease;
   }
   .magnet.pin{--max:62px;}
-  @media (max-width:640px){ .magnet{--max:88px;} .magnet.pin{--max:50px;} }
+  .magnet.pin.groot{--max:90px;}
+  @media (max-width:640px){ .magnet{--max:88px;} .magnet.pin{--max:50px;} .magnet.pin.groot{--max:72px;} }
   .magnet img{
     width:auto; height:auto; max-width:var(--max); max-height:var(--max); display:block;
     filter:drop-shadow(0 5px 6px rgba(20,16,8,.28)) drop-shadow(0 1px 1px rgba(20,16,8,.2));
@@ -233,7 +234,7 @@
 </footer>
 
 <script src="assets/destinations.js"></script>
-<script src="assets/magneten.js?v=1794253858"></script>
+<script src="assets/magneten.js?v=1794254109"></script>
 <script src="assets/nav.js"></script>
 <script>
   const nameFR = {
@@ -275,7 +276,7 @@
       '<span class="mono">' + esc(sub) + '</span>' +
       (page ? '<a href="' + page + '">Voir le voyage →</a>' : '') + '</div>' +
       '<div class="magnet-row">' + items.map(m =>
-        '<figure class="magnet' + (m.type === 'pin' ? ' pin' : '') + '" tabindex="0" role="button" data-img="' + esc(m.img) + '" data-land="' + esc(title) + '" data-regio="' + esc(m.regio || '') + '">' +
+        '<figure class="magnet' + (m.type === 'pin' ? ' pin' + (m.groot ? ' groot' : '') : '') + '" tabindex="0" role="button" data-img="' + esc(m.img) + '" data-land="' + esc(title) + '" data-regio="' + esc(m.regio || '') + '">' +
           '<img src="' + esc(m.img) + '" alt="' + esc('Souvenir ' + title) + '" loading="lazy">' +
         '</figure>').join('') +
       '</div>';
