@@ -7,6 +7,12 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/belgie-pin-vlag.webp",
+  "land": "België",
+  "regio": "",
+  "type": "pin"
+ },
+ {
   "img": "assets/magneten/belgie-magritte-2.webp",
   "land": "België",
   "regio": "Magritte",
@@ -17,12 +23,6 @@ const MAGNETEN = [
   "land": "België",
   "regio": "Magritte",
   "type": "aimant"
- },
- {
-  "img": "assets/magneten/belgie-pin-vlag.webp",
-  "land": "België",
-  "regio": "",
-  "type": "pin"
  },
  {
   "img": "assets/magneten/belgie-magritte-pin.webp",
