@@ -429,6 +429,18 @@ const MAGNETEN = [
   "type": "aimant"
  },
  {
+  "img": "assets/magneten/turkije-istanbul-3.webp",
+  "land": "Turkije",
+  "regio": "Istanbul",
+  "type": "aimant"
+ },
+ {
+  "img": "assets/magneten/turkije-istanbul-4.webp",
+  "land": "Turkije",
+  "regio": "Istanbul",
+  "type": "aimant"
+ },
+ {
   "img": "assets/magneten/turkije-1.webp",
   "land": "Turkije",
   "regio": "",
@@ -445,6 +457,12 @@ const MAGNETEN = [
   "land": "Hongarije",
   "regio": "Budapest",
   "type": "porte-cle"
+ },
+ {
+  "img": "assets/magneten/hongarije-budapest.webp",
+  "land": "Hongarije",
+  "regio": "Budapest",
+  "type": "aimant"
  },
  {
   "img": "assets/magneten/letland-1.webp",
